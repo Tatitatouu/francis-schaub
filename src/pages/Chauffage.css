@@ -1,0 +1,1345 @@
+
+/* ===========================================
+   PAGE CHAUFFAGE - DESIGN EN SECTIONS MODERNES
+   =========================================== */
+
+.chauffage-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fafafa;
+}
+
+.chauffage-main {
+  flex: 1;
+  padding-top: 80px;
+}
+
+.chauffage-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===========================================
+   SECTIONS CONTENT LAYOUT
+   =========================================== */
+.chauffage-sections-wrapper {
+  background: transparent;
+  margin: -3rem 2rem 0;
+  border-radius: 24px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.chauffage-section {
+  padding: 4rem 3rem;
+  position: relative;
+  background: transparent;
+}
+
+.chauffage-section:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chauffage-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.chauffage-section-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.chauffage-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+}
+
+.chauffage-section-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   SECTION CHAUDIÈRES BOIS 
+   =========================================== */
+.chauffage-section.bois {
+  background: #f5f1eb;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+}
+
+.chauffage-section.bois .chauffage-section-title {
+  color: #8b7355;
+}
+
+.chauffage-section.bois .chauffage-section-title::after {
+  background: linear-gradient(90deg, #8b7355, #a08770);
+}
+
+.chauffage-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.chauffage-content-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.chauffage-content-text p {
+  margin-bottom: 1.5rem;
+}
+
+.chauffage-content-text strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.chauffage-advantages-list {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #8b7355;
+}
+
+.chauffage-advantages-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chauffage-advantages-title::before {
+  content: '🔥';
+  font-size: 1.2rem;
+}
+
+.chauffage-advantage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.chauffage-advantage-item:last-child {
+  border-bottom: none;
+}
+
+.chauffage-advantage-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chauffage-advantage-icon::before {
+  content: '✓';
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.chauffage-advantage-text {
+  color: #374151;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ===========================================
+   SECTION CHAUDIÈRES GAZ/FIOUL 
+   =========================================== */
+.chauffage-section.gaz-fioul {
+  background: #f0f0f0;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+}
+
+.chauffage-section.gaz-fioul .chauffage-section-title {
+  color: #6b6b6b;
+}
+
+.chauffage-section.gaz-fioul .chauffage-section-title::after {
+  background: linear-gradient(90deg, #6b6b6b, #8a8a8a);
+}
+
+.chauffage-tech-highlight {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #6b6b6b;
+  margin-bottom: 2rem;
+}
+
+.chauffage-tech-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6b6b6b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chauffage-tech-title::before {
+  content: '⚙️';
+  font-size: 1.1rem;
+}
+
+/* ===========================================
+   NOUVELLES INTERVENTIONS STYLE ÉPURÉ
+   =========================================== */
+.chauffage-interventions-list {
+  margin-top: 2rem;
+}
+
+.chauffage-interventions-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6b6b6b;
+  margin-bottom: 1.5rem;
+}
+
+.chauffage-interventions-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chauffage-interventions-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chauffage-interventions-column li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(107, 107, 107, 0.1);
+  position: relative;
+  padding-left: 1.5rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.chauffage-interventions-column li:before {
+  content: "•";
+  color: #6b6b6b;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.chauffage-interventions-column li:last-child {
+  border-bottom: none;
+}
+
+/* Anciennes cartes à supprimer */
+.chauffage-interventions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.chauffage-intervention-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.chauffage-intervention-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chauffage-intervention-card::before {
+  content: '🔧';
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.chauffage-intervention-text {
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ===========================================
+   SECTION POMPES À CHALEUR 
+   =========================================== */
+.chauffage-section.pac {
+  background: #f7f4f1;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+}
+
+.chauffage-section.pac .chauffage-section-title {
+  color: #b8a082;
+}
+
+.chauffage-section.pac .chauffage-section-title::after {
+  background: linear-gradient(90deg, #b8a082, #c9b596);
+}
+
+.chauffage-pac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.chauffage-pac-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-top: 4px solid #c9b596;
+  transition: all 0.3s ease;
+}
+
+.chauffage-pac-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.chauffage-pac-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(90deg, #b8a082, #c9b596);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.chauffage-pac-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.chauffage-pac-description {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   SECTION DÉPANNAGE 
+   =========================================== */
+.chauffage-section.depannage {
+  background: #ede8e3;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+}
+
+.chauffage-section.depannage .chauffage-section-title {
+  color: #9b8671;
+}
+
+.chauffage-section.depannage .chauffage-section-title::after {
+  background: linear-gradient(90deg, #9b8671, #aea085);
+}
+
+/* ===========================================
+   NOUVELLE SECTION DÉPANNAGE MODERNE
+   =========================================== */
+.chauffage-depannage-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.chauffage-services-simple {
+  margin-top: 3rem;
+}
+
+.chauffage-services-simple .chauffage-services-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #9b8671;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.chauffage-services-simple .chauffage-services-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #9b8671, #aea085);
+  border-radius: 2px;
+}
+
+.chauffage-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+.chauffage-service-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.chauffage-service-dot {
+  width: 8px;
+  height: 8px;
+  background: #9b8671;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===========================================
+   PRICING MODERNE CIRCULAIRE
+   =========================================== */
+.chauffage-pricing-modern {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 1px solid rgba(155, 134, 113, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.chauffage-pricing-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9b8671, #aea085);
+}
+
+.chauffage-price-circle {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #9b8671 0%, #aea085 100%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  box-shadow: 0 8px 25px rgba(155, 134, 113, 0.3);
+}
+
+.chauffage-price-amount {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+}
+
+.chauffage-price-unit {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.chauffage-price-details {
+  text-align: center;
+}
+
+.chauffage-price-service {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chauffage-price-zone {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.chauffage-services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.chauffage-service-badge {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.chauffage-service-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chauffage-service-badge::before {
+  content: '🔧';
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================================
+   SECTION HERO
+   =========================================== */
+.chauffage-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  color: white;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.chauffage-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 20L50 0L100 20" fill="rgba(255,255,255,0.03)"/></svg>');
+  background-size: 100px 20px;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(-20px); }
+}
+
+.chauffage-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chauffage-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.chauffage-hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ===========================================
+   SECTION CTA
+   =========================================== */
+.chauffage-cta-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.chauffage-cta-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.chauffage-cta-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.chauffage-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #8b7355 0%, #a08770 100%);
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(139, 115, 85, 0.3);
+  transform: perspective(1000px) rotateX(0deg);
+}
+
+.chauffage-cta-button:hover {
+  transform: perspective(1000px) rotateX(-5deg) translateY(-5px);
+  box-shadow: 0 12px 40px rgba(139, 115, 85, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.chauffage-zone-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 1024px) {
+  .chauffage-sections-wrapper {
+    margin: -2rem 1rem 0;
+  }
+  
+  .chauffage-section {
+    padding: 3rem 2rem;
+  }
+  
+  .chauffage-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .chauffage-interventions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================
+   RESPONSIVITÉ TABLETTES (768px - 600px)
+   =========================================== */
+@media (max-width: 768px) and (min-width: 600px) {
+  .chauffage-depannage-content {
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+  }
+  
+  .chauffage-pricing-modern {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .chauffage-price-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .chauffage-price-amount {
+    font-size: 1.8rem;
+  }
+  
+  .chauffage-interventions-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ===========================================
+   RESPONSIVITÉ GRANDS MOBILES (600px - 480px)
+   =========================================== */
+@media (max-width: 600px) and (min-width: 480px) {
+  .chauffage-depannage-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .chauffage-pricing-modern {
+    order: -1;
+    margin: 0 auto 2rem;
+    max-width: 280px;
+    padding: 2rem 1.5rem;
+  }
+  
+  .chauffage-price-circle {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .chauffage-price-amount {
+    font-size: 1.6rem;
+  }
+  
+  .chauffage-interventions-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .chauffage-services-simple {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chauffage-main {
+    padding-top: 60px;
+  }
+  
+  .chauffage-container {
+    padding: 0 1rem;
+  }
+  
+  .chauffage-hero {
+    padding: 4rem 0;
+  }
+  
+  .chauffage-sections-wrapper {
+    margin: -1rem 0 0;
+    border-radius: 0;
+  }
+  
+  .chauffage-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .chauffage-pac-grid,
+  .chauffage-services-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .chauffage-advantages-list,
+  .chauffage-tech-highlight {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chauffage-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .chauffage-cta-button {
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .chauffage-pac-card,
+  .chauffage-intervention-card {
+    padding: 1.5rem;
+  }
+}
+
+
+.chauffage-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b  50%, #334155 100%);
+  color: white;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.chauffage-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.chauffage-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.chauffage-hero-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chauffage-hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  font-weight: 500;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chauffage-service-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.chauffage-badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.chauffage-badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+
+.chauffage-services-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.chauffage-section-title {
+  text-align: center;
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4rem;
+  background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chauffage-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.chauffage-service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.chauffage-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 50%, #92400e 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.chauffage-service-card:hover::before {
+  transform: translateX(0);
+}
+
+.chauffage-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.chauffage-service-card.featured {
+  border-left: 5px solid #8b7355;
+  background: linear-gradient(135deg, #f5f1eb 0%, #f0ebe3 100%);
+}
+
+.chauffage-service-card.maintenance {
+  border-left: 5px solid #b8a082;
+  background: linear-gradient(135deg, #f7f4f1 0%, #f2ede7 100%);
+}
+
+.chauffage-service-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.chauffage-service-description {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.chauffage-service-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1.5rem 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chauffage-service-subtitle::before {
+  content: '⚡';
+  font-size: 1.1rem;
+}
+
+.chauffage-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.chauffage-service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+  transition: all 0.3s ease;
+}
+
+.chauffage-service-item:last-child {
+  border-bottom: none;
+}
+
+.chauffage-service-item:hover {
+  background: rgba(59, 130, 246, 0.04);
+  border-radius: 8px;
+  padding-left: 0.5rem;
+  margin: 0 -0.5rem;
+}
+
+.chauffage-service-icon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.chauffage-service-icon::before {
+  content: '✓';
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.chauffage-service-text {
+  color: #374151;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
+.chauffage-highlight-box {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.chauffage-highlight-box::before {
+  content: '💡';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #f59e0b;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.chauffage-tech-box {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 2px solid #3b82f6;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.chauffage-tech-box::before {
+  content: '⚙️';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #3b82f6;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.chauffage-pricing-box {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border: 2px solid #10b981;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.chauffage-pricing-box::before {
+  content: '💰';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #10b981;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.chauffage-box-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.8rem;
+}
+
+.chauffage-box-content {
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.chauffage-price-highlight {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #059669;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+
+.chauffage-tech-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.chauffage-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.chauffage-tech-feature {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.chauffage-tech-feature:hover {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.chauffage-tech-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+}
+
+.chauffage-tech-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.chauffage-tech-description {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+
+.chauffage-cta-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.chauffage-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.chauffage-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.chauffage-cta-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.chauffage-cta-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.chauffage-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.chauffage-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.chauffage-cta-button:hover::before {
+  left: 100%;
+}
+
+.chauffage-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.chauffage-contact-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chauffage-zone-text {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .chauffage-services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .chauffage-tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .chauffage-main {
+    padding-top: 60px;
+  }
+  
+  .chauffage-container {
+    padding: 0 1rem;
+  }
+  
+  .chauffage-hero {
+    padding: 3rem 0;
+  }
+  
+  .chauffage-services-section,
+  .chauffage-tech-section,
+  .chauffage-cta-section {
+    padding: 4rem 0;
+  }
+  
+  .chauffage-service-card {
+    padding: 1.8rem;
+  }
+  
+  .chauffage-service-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chauffage-badge {
+    width: fit-content;
+  }
+  
+  .chauffage-highlight-box,
+  .chauffage-tech-box,
+  .chauffage-pricing-box {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chauffage-service-card {
+    padding: 1.2rem;
+  }
+  
+  .chauffage-service-title {
+    font-size: 1.3rem;
+  }
+  
+  .chauffage-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .chauffage-tech-feature {
+    padding: 1.5rem;
+  }
+  
+  .chauffage-interventions-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chauffage-depannage-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .chauffage-pricing-modern {
+    order: -1;
+    margin: 0 auto 1.5rem;
+    max-width: 280px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .chauffage-price-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .chauffage-price-amount {
+    font-size: 1.4rem;
+  }
+  
+  .chauffage-interventions-columns {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .chauffage-services-simple {
+    margin-top: 1rem;
+  }
+  
+  .chauffage-services-simple .chauffage-services-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chauffage-price-amount {
+    font-size: 1.8rem;
+  }
+}
