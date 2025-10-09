@@ -36,19 +36,43 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi - remplacer par vraie logique d'envoi
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        urgency: 'normal',
-        message: ''
+      // Préparation des données pour Web3Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', '32ae221a-0e2c-43b5-bac3-cf762e053602');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('service', formData.service);
+      formDataToSend.append('urgency', formData.urgency);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', `Nouvelle demande de devis - ${formData.service || 'Service non spécifié'}`);
+      formDataToSend.append('from_name', formData.name);
+      formDataToSend.append('redirect', 'false');
+
+      // Envoi vers Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          urgency: 'normal',
+          message: ''
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi du formulaire');
+      }
     } catch (error) {
+      console.error('Erreur:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -138,6 +162,15 @@ const Contact = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="contact-form">
+                  {/* Champ caché pour Web3Forms */}
+                  <input type="hidden" name="access_key" value="32ae221a-0e2c-43b5-bac3-cf762e053602" />
+                  <input type="hidden" name="subject" value={`Nouvelle demande de devis - ${formData.service || 'Service non spécifié'}`} />
+                  <input type="hidden" name="from_name" value={formData.name} />
+                  <input type="hidden" name="redirect" value="false" />
+                  
+                  {/* Protection anti-spam (honeypot) */}
+                  <input type="checkbox" name="botcheck" style={{display: 'none'}} />
+                  
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="name">Nom complet *</label>

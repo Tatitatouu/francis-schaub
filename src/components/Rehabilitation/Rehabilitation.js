@@ -41,12 +41,12 @@ const Rehabilitation = () => {
             
             <div className="pricing-row">
               <div className="pricing-service">Taux horaire de main d'œuvre</div>
-              <div className="pricing-price">46 € HT pose/installation</div>
+              <div className="pricing-price">56 € HT pose/installation</div>
             </div>
             
             <div className="pricing-row">
               <div className="pricing-service">Taux horaire de main d'œuvre</div>
-              <div className="pricing-price">54 € HT dépannage</div>
+              <div className="pricing-price">60 € HT dépannage</div>
             </div>
           </div>
         </div>

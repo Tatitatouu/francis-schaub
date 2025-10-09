@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Flame, Droplets, Wrench, ArrowRight, Leaf } from 'lucide-react';
 import './Services.css';
 
@@ -8,25 +9,29 @@ const Services = () => {
       icon: <Flame />,
       title: "Chauffage",
       description: "Installation/entretien de systèmes de chauffage performants",
-      features: ["Chaudières gaz/fioul", "Pompes à chaleur", "Radiateurs", "Plancher chauffant"]
+      features: ["Chaudières gaz/fioul", "Pompes à chaleur", "Radiateurs", "Plancher chauffant"],
+      link: "/chauffage"
     },
     {
       icon: <Droplets />,
       title: "Sanitaire", 
       description: "Solutions complètes pour votre salle de bain et cuisine",
-      features: ["Plomberie complète", "Salles de bain", "Robinetterie", "Adoucisseurs"]
+      features: ["Plomberie complète", "Salles de bain", "Robinetterie", "Adoucisseurs"],
+      link: "/contact"
     },
     {
       icon: <Wrench />,
       title: "Dépannage",
       description: "Intervention rapide 7j/7 dans tout le Haut-Rhin",
-      features: ["Urgences 24h/24", "Maintenance", "Réparations", "Contrats entretien"]
+      features: ["Urgences 24h/24", "Maintenance", "Réparations", "Contrats entretien"],
+      link: "/contact"
     },
     {
       icon: <Leaf />,
       title: "Énergies renouvelables",
       description: "Solutions écologiques pour un avenir durable",
-      features: ["Pompes à chaleur", "Panneaux solaires", "Chauffe-eau thermodynamiques", "Systèmes hybrides"]
+      features: ["Pompes à chaleur", "Panneaux solaires", "Chauffe-eau thermodynamiques", "Systèmes hybrides"],
+      link: "/energies-renouvelables"
     }
   ];
 
@@ -64,10 +69,10 @@ const Services = () => {
                 ))}
               </ul>
               
-              <button className="service-cta">
+              <Link to={service.link} className="service-cta">
                 En savoir plus
                 <ArrowRight className="cta-arrow" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>

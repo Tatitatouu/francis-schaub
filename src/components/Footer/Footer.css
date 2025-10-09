@@ -53,7 +53,6 @@
   color: #94a3b8;
   line-height: 1.6;
   font-size: 16px;
-  margin-bottom: 32px;
 }
 
 /* Sections de liens */
@@ -324,7 +323,6 @@
   .footer-brand {
     grid-column: 1 / -1;
     max-width: none;
-    margin-bottom: 20px;
   }
   
   .footer-certifications {

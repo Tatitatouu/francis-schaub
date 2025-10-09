@@ -2,18 +2,24 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import HomePageApp from './pages/HomePageApp';
-import ContactPage from './pages/ContactPage';
+import HomePage from './pages/Home';
+import ContactPage from './pages/Contact';
 import Chauffage from './pages/Chauffage';
+import EnergiesRenouvelables from './pages/EnergiesRenouvelables';
+import Sanitaire from './pages/Sanitaire';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<HomePageApp />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/chauffage" element={<Chauffage />} />
+          <Route path="/energies-renouvelables" element={<EnergiesRenouvelables />} />
+          <Route path="/sanitaire" element={<Sanitaire />} />
         </Routes>
       </Router>
     </div>

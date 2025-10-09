@@ -36,7 +36,7 @@ const Footer = () => {
               </div>
               <div className="hours-item emergency">
                 <span className="day">Urgences</span>
-                <span className="time">24h/24 - 7j/7</span>
+                <span className="time">Réservé aux clients</span>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer/Footer';
 import './Chauffage.css';
 
 const Chauffage = () => {
@@ -157,7 +157,7 @@ const Chauffage = () => {
             <div className="chauffage-depannage-content">
               <div className="chauffage-pricing-modern">
                 <div className="chauffage-price-circle">
-                  <div className="chauffage-price-amount">54€</div>
+                  <div className="chauffage-price-amount">60€</div>
                   <div className="chauffage-price-unit">HT/h</div>
                 </div>
                 <div className="chauffage-price-details">
@@ -167,9 +167,8 @@ const Chauffage = () => {
 
               <div className="chauffage-content-text">
                 <p>
-                  Nous sommes à votre disposition pour dépanner et assurer la maintenance préventive 
-                  de vos appareils de chauffage. Nous nous déplaçons depuis Baldersheim dans tout le Haut-Rhin 
-                  pour entretenir ou remettre en service vos équipements.
+                  Nous intervenons dans tout le Haut-Rhin depuis Baldersheim pour l’entretien, 
+                  le dépannage et la maintenance préventive de vos systèmes de chauffage.
                 </p>
                 
                 <div className="chauffage-services-simple">
