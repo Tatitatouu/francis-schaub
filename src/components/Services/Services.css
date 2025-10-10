@@ -120,13 +120,16 @@
 .service-icon {
   width: 68px;
   height: 68px;
-  background: var(--fs-brand-blue);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 16px;
   position: relative;
   transition: all 0.3s ease;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(59, 130, 246, 0.1);
 }
 
 .service-icon::before {
@@ -146,6 +149,8 @@
 
 .service-card:hover .service-icon {
   transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .service-icon svg {

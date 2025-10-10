@@ -1,0 +1,661 @@
+/* ===========================================
+   PAGE SALLE DE BAINS - PALETTE SPA MODERNE
+   =========================================== */
+
+:root {
+  /* Palette Salle de Bains - Tons Spa & Aquatiques */
+  --sdb-primary: #5f9ea0;        /* Cadet Blue - bleu-vert apaisant */
+  --sdb-primary-dark: #4a7c7e;   /* Plus foncé pour contraste */
+  --sdb-secondary: #8fbc8f;      /* Dark Sea Green - vert sage */
+  --sdb-accent: #d2b48c;         /* Tan - beige chaud terre cuite */
+  --sdb-accent-light: #e6d3b7;   /* Beige plus clair */
+  --sdb-neutral: #f5f5dc;        /* Beige très clair */
+  --sdb-white: #faf8f5;          /* Blanc cassé crème */
+  --sdb-text: #2f4f4f;           /* Dark Slate Gray */
+  --sdb-text-light: #708090;     /* Slate Gray */
+}
+
+.salle-bains-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--sdb-white) 0%, var(--sdb-neutral) 100%);
+}
+
+.salle-bains-main {
+  background: transparent;
+}
+
+/* ===========================================
+   HERO SECTION INNOVANTE - PALETTE SPA
+   =========================================== */
+
+.salle-bains-hero {
+  background: linear-gradient(135deg, var(--sdb-primary) 0%, var(--sdb-primary-dark) 50%, var(--sdb-text) 100%);
+  color: white;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.salle-bains-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(95, 158, 160, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(143, 188, 143, 0.3) 0%, transparent 50%);
+  opacity: 0.8;
+}
+
+.salle-bains-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, var(--sdb-white) 0%, rgba(250, 248, 245, 0) 100%);
+}
+
+.salle-bains-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.salle-bains-hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.salle-bains-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, var(--sdb-accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.salle-bains-hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  color: var(--sdb-neutral);
+}
+
+/* Features dans le hero */
+.salle-bains-hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-feature:hover {
+  background: rgba(210, 180, 140, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(95, 158, 160, 0.3);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.hero-feature span:last-child {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===========================================
+   SECTIONS WRAPPER
+   =========================================== */
+
+.salle-bains-sections-wrapper {
+  margin: -4rem 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.salle-bains-section {
+  background: white;
+  margin-bottom: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  padding: 5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.salle-bains-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--sdb-primary) 0%, var(--sdb-secondary) 50%, var(--sdb-accent) 100%);
+}
+
+.salle-bains-section.intro {
+  background: linear-gradient(135deg, var(--sdb-white) 0%, var(--sdb-neutral) 100%);
+}
+
+.salle-bains-section.services {
+  background: linear-gradient(135deg, var(--sdb-neutral) 0%, var(--sdb-accent-light) 100%);
+}
+
+.salle-bains-section.pmr {
+  background: linear-gradient(135deg, var(--sdb-primary-dark) 0%, var(--sdb-primary) 100%);
+  color: white;
+}
+
+/* ===========================================
+   SECTION HEADERS
+   =========================================== */
+
+.salle-bains-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.salle-bains-section-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--sdb-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  line-height: 1.2;
+}
+
+.salle-bains-section.pmr .salle-bains-section-title {
+  color: white;
+}
+
+.salle-bains-section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--sdb-primary), var(--sdb-accent));
+  margin: 2rem auto 0;
+  border-radius: 3px;
+}
+
+.salle-bains-section-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--sdb-text-light);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.salle-bains-section.pmr .salle-bains-section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===========================================
+   SECTION INTRO CONTENT
+   =========================================== */
+
+.salle-bains-intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.intro-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--sdb-text);
+  margin-bottom: 1.5rem;
+}
+
+.intro-text strong {
+  color: var(--sdb-primary-dark);
+  font-weight: 700;
+}
+
+.intro-highlight {
+  background: linear-gradient(135deg, var(--sdb-primary) 0%, var(--sdb-secondary) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  box-shadow: 0 10px 30px rgba(95, 158, 160, 0.4);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.highlight-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--sdb-neutral);
+}
+
+.highlight-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* ===========================================
+   SERVICES TIMELINE INNOVANTE
+   =========================================== */
+
+.services-intro {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--sdb-text);
+}
+
+.services-intro strong {
+  color: var(--sdb-primary-dark);
+  font-weight: 700;
+}
+
+.services-timeline {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--sdb-primary), var(--sdb-secondary));
+}
+
+.timeline-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--sdb-primary) 0%, var(--sdb-accent) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(95, 158, 160, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--sdb-primary);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(95, 158, 160, 0.2);
+  border-left-color: var(--sdb-accent);
+}
+
+.timeline-content h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sdb-text);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: var(--sdb-text-light);
+  line-height: 1.6;
+}
+
+.services-conclusion {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.conclusion-highlight {
+  background: linear-gradient(135deg, var(--sdb-primary-dark) 0%, var(--sdb-primary) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 15px 35px rgba(95, 158, 160, 0.4);
+}
+
+.conclusion-highlight h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--sdb-neutral);
+}
+
+.conclusion-highlight p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   SECTION PMR
+   =========================================== */
+
+.pmr-intro {
+  margin-bottom: 4rem;
+}
+
+.pmr-context {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.pmr-context p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+}
+
+.pmr-context strong {
+  color: var(--sdb-neutral);
+  font-weight: 700;
+}
+
+.pmr-expertise {
+  background: rgba(210, 180, 140, 0.2);
+  padding: 2.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(210, 180, 140, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pmr-expertise h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--sdb-neutral);
+}
+
+.pmr-expertise p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pmr-expertise strong {
+  color: var(--sdb-neutral);
+  font-weight: 700;
+}
+
+/* ===========================================
+   PMR SERVICES CARDS
+   =========================================== */
+
+.pmr-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pmr-service-card {
+  background: rgba(143, 188, 143, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(143, 188, 143, 0.3);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pmr-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(143, 188, 143, 0.2) 0%, rgba(210, 180, 140, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pmr-service-card:hover::before {
+  opacity: 1;
+}
+
+.pmr-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(143, 188, 143, 0.5);
+  box-shadow: 0 20px 40px rgba(95, 158, 160, 0.3);
+}
+
+.pmr-service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.pmr-service-content h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sdb-neutral);
+  margin-bottom: 1rem;
+}
+
+.pmr-service-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* ===========================================
+   PMR QUALITY SECTION
+   =========================================== */
+
+.pmr-quality {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quality-badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3rem;
+  border-radius: 20px;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.badge-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.badge-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+}
+
+.badge-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.badge-content strong {
+  color: #f1f5f9;
+  font-weight: 700;
+}
+
+.contact-cta {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  color: #f1f5f9;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 992px) {
+  .salle-bains-intro-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .intro-highlight {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .pmr-services {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .salle-bains-container {
+    padding: 0 1rem;
+  }
+  
+  .salle-bains-hero {
+    padding: 6rem 0 4rem;
+  }
+  
+  .salle-bains-sections-wrapper {
+    margin: -2rem 1rem 0;
+  }
+  
+  .salle-bains-section {
+    padding: 3rem 0;
+  }
+  
+  .salle-bains-hero-features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .timeline-item::after {
+    display: none;
+  }
+  
+  .timeline-content {
+    margin-top: 1rem;
+  }
+  
+  .quality-badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .salle-bains-container {
+    padding: 0 0.75rem;
+  }
+  
+  .salle-bains-section {
+    padding: 2.5rem 0;
+  }
+  
+  .salle-bains-sections-wrapper {
+    margin: -1.5rem 0.5rem 0;
+  }
+  
+  .intro-highlight,
+  .timeline-content,
+  .conclusion-highlight,
+  .pmr-expertise,
+  .pmr-service-card,
+  .quality-badge,
+  .contact-cta {
+    padding: 2rem;
+  }
+  
+  .pmr-services {
+    grid-template-columns: 1fr;
+  }
+}

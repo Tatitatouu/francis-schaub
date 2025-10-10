@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Home } from 'lucide-react';
 import './Header.css';
 import Logo from '../../assets/branding/logo.svg';
@@ -20,9 +21,9 @@ const Header = ({ variant = 'default' }) => {
     <header className={`header header-${variant}`}>
       <div className="container">
         <div className="header-content">
-          <a href="/" className="logo" aria-label="Accueil Francis Schaub">
+          <Link to="/" className="logo" aria-label="Accueil Francis Schaub">
             <img src={Logo} alt="Francis Schaub" className="logo-img" />
-          </a>
+          </Link>
 
           <MobileBurgerMenu 
             isOpen={isMobileMenuOpen} 
@@ -36,9 +37,9 @@ const Header = ({ variant = 'default' }) => {
           <nav className={`navigation ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <ul className="nav-list">
               <li className="nav-item">
-                <a href="/" className="nav-link home-link" onClick={closeMobileMenu} aria-label="Accueil">
+                <Link to="/" className="nav-link home-link" onClick={closeMobileMenu} aria-label="Accueil">
                   <Home />
-                </a>
+                </Link>
               </li>
               <NavDropdown onMobileClose={closeMobileMenu} />
               <li className="nav-item">
@@ -47,14 +48,14 @@ const Header = ({ variant = 'default' }) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#avis" className="nav-link" onClick={closeMobileMenu}>
+                <Link to="/avis-client" className="nav-link" onClick={closeMobileMenu}>
                   AVIS CLIENTS
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/contact" className="nav-link" onClick={closeMobileMenu}>
+                <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>
                   CONTACT
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

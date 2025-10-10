@@ -84,7 +84,6 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="contact-container">
         <div className="contact-header">
-          <span className="contact-label">CONTACTEZ-NOUS</span>
           <h2 className="contact-title">
             Une question ? Un projet ?
           </h2>
@@ -109,7 +108,7 @@ const Contact = () => {
                     <div className="contact-text">
                       <h4>Téléphone</h4>
                       <p>03 89 57 61 62</p>
-                      <span className="contact-note">Urgences 24h/24 - 7j/7</span>
+                      <span className="contact-note">Urgences - Réservé aux clients</span>
                     </div>
                   </div>
 
@@ -141,7 +140,6 @@ const Contact = () => {
                     <div className="contact-text">
                       <h4>Horaires</h4>
                       <p>Lun - Ven : 8h-12h / 14h-18h</p>
-                      <span className="contact-note">Urgences acceptées en dehors des horaires</span>
                     </div>
                   </div>
                 </div>

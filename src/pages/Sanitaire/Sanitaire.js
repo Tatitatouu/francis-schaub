@@ -78,7 +78,7 @@ const Sanitaire = () => {
                   </div>
                 </div>
                 
-                <div className="sanitaire-service-item highlighted">
+                <div className="sanitaire-service-item">
                   <div className="sanitaire-service-icon">🛁</div>
                   <div className="sanitaire-service-content">
                     <h4>Création complète de salle de bains</h4>
@@ -97,12 +97,12 @@ const Sanitaire = () => {
               
               <div className="sanitaire-materials">
                 <p>
-                  Nous travaillons avec une <strong>large variété de matériaux</strong>, en fonction de la nature du chantier et de l'intervention demandée : 
-                  PVC, PER, cuivre, multicouche. De même, nous employons des <strong>équipements sanitaires de qualité, esthétiques et durables</strong>.
+                  Nous travaillons avec une large gamme de <strong>matériaux adaptés à chaque chantier : PVC, PER, cuivre, multicouche,</strong> selon les besoins du terrain. 
+                  Côté équipements sanitaires, nous privilégions le <strong>beau, solide et le durable </strong> - pas question de faire dans l'éphemère.
                 </p>
                 <p>
-                  Nos plombiers sont méticuleux, ils interviennent en prenant soin de l'existant et restituent des 
-                  <strong> chantiers en parfait état de propreté</strong>.
+                  Nos plombiers, eux, sont du genre <strong>soigneux</strong> : ils interviennent avec précision, 
+                  respectent l'existant et repartent <strong>en laissant les lieux propres</strong>.
                 </p>
               </div>
             </div>
@@ -117,12 +117,11 @@ const Sanitaire = () => {
               
               <div className="sanitaire-urgence-intro">
                 <p>
-                  Vous êtes rentré chez vous et avez découvert une flaque d'eau sous votre ballon d'eau chaude ? 
-                  Le mitigeur de la salle de bains goutte et a besoin d'être remplacé ? Votre chasse d'eau coule encore et encore ?
+                  Vous êtes rentré chez vous et découvrez une <strong>flaque d'eau sous votre ballon d'eau chaude</strong> ? 
+                  Le <strong>mitigeur capricieux</strong> ou une <strong>chasse d'eau rebelle</strong> ? Pas de panique.
                 </p>
                 <p>
-                  SCHAUB Francis ETS a la chance de pouvoir compter sur des <strong>plombiers dépanneurs perspicaces et très efficaces</strong>. 
-                  À la lumière de leur expérience, ils sauront <strong>identifier l'origine de votre panne</strong> en plomberie et y apporter la solution qui s'impose.
+                  Chez <strong>SCHAUB Francis ETS</strong>, nos <strong>plombiers dépanneurs</strong> ont le coup d'oeil et le bon réflexe pour identifier rapidement l'origine de votre problème.
                 </p>
               </div>
               
@@ -152,25 +151,19 @@ const Sanitaire = () => {
                 </div>
                 
                 <p>
-                  Nos dépanneurs savent combien il peut être contraignant de faire face à un dysfonctionnement en plomberie. 
-                  Aussi, ils mettent tout en œuvre pour s'adapter à l'urgence de votre situation et pour y remédier dans les plus brefs délais.
+                  Nos <strong>dépanneurs</strong> savent qu’une panne de plomberie tombe toujours au <strong>mauvais moment</strong>. 
+                  C’est pourquoi ils font tout leur possible pour <strong>intervenir rapidement</strong>, s’adapter à l’urgence et rétablir la situation sans tarder.
                 </p>
               </div>
               
               <div className="sanitaire-pricing">
                 <div className="sanitaire-price-highlight">
-                  <p><strong>Nos prestations de dépannage sont accessibles à partir de 54 € HT / heure.</strong></p>
+                  <p><strong>Nos prestations de dépannage sont accessibles à partir de 60 € HT / heure.</strong></p>
                   <p>
                     Nous intervenons en faisant preuve d'une grande <strong>transparence</strong>. 
                     Nous vous informons de manière claire sur toutes les actions qui vont être entreprises pour vous dépanner. 
                     Avec SCHAUB Francis ETS, aucune mauvaise surprise :
                   </p>
-                </div>
-                
-                <div className="sanitaire-quote">
-                  <blockquote>
-                    « Chez nous, on dit ce qu'on fait et on fait ce qu'on dit. »
-                  </blockquote>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ const About = () => {
 
   const stats = [
     { icon: <Users />, value: '25+', label: 'Années d\'expérience' },
-    { icon: <Award />, value: '12', label: 'Professionnels' },
+    { icon: <Award />, value: '25+', label: 'Professionnels' },
     { icon: <MapPin />, value: 'Haut-Rhin', label: 'Zone d\'intervention' },
     { icon: <Leaf />, value: 'RGE', label: 'Certifié environnement' }
   ];
@@ -36,7 +36,7 @@ const About = () => {
             <div className="about-highlights">
               <h3>Notre expertise</h3>
               <p>
-                Entreprise familiale composée de 12 professionnels compétents, nous mettons 
+                Entreprise familiale composée de plus de 25 professionnels compétents, nous mettons 
                 notre savoir-faire au service de particuliers et professionnels dans tous
                 les secteurs du Haut-Rhin.
               </p>
