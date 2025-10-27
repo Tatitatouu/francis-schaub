@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
 import './SalleDeBains.css';
 
 const SalleDeBains = () => {
+  const [visibleNumbers, setVisibleNumbers] = useState([]);
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+
+      const timeline = timelineRef.current;
+      const items = timeline.querySelectorAll('.timeline-item');
+      const windowHeight = window.innerHeight;
+      const newVisibleNumbers = [];
+
+      items.forEach((item, index) => {
+        const itemRect = item.getBoundingClientRect();
+        const itemMiddle = itemRect.top + itemRect.height / 2;
+        
+        // L'élément est visible quand il est dans les 70% de l'écran
+        const isVisible = itemMiddle < windowHeight * 0.7 && itemRect.bottom > 0;
+        
+        if (isVisible) {
+          newVisibleNumbers.push(index + 1);
+        }
+      });
+
+      // Met à jour uniquement si le tableau a changé
+      setVisibleNumbers(prev => {
+        const prevSorted = prev.sort((a, b) => a - b).join(',');
+        const newSorted = newVisibleNumbers.sort((a, b) => a - b).join(',');
+        
+        if (prevSorted !== newSorted) {
+          return newVisibleNumbers;
+        }
+        return prev;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Appel initial pour vérifier la position au chargement
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="salle-bains-page page-with-hero">
       <Header />
@@ -43,15 +87,14 @@ const SalleDeBains = () => {
               <div className="salle-bains-intro-content">
                 <div className="intro-text">
                   <p>
-                    Votre salle de bains n'a pas changé depuis de nombreuses années et n'est plus fonctionnelle ? 
-                    Vous aimeriez <strong>revoir la configuration de votre salle d'eau</strong> sans pour autant devoir 
-                    mobiliser plusieurs artisans ? Vous souhaitez <strong>rénover une salle de bains</strong> pour 
-                    l'adapter à une personne à mobilité réduite ?
+                    Votre <strong>salle de bains</strong> a pris un coup de vieux ? Vous rêvez d'un espace plus 
+                    <strong> fonctionnel, mieux agencé</strong>, sans devoir faire appel à trois corps de métiers
+                    différents ? Ou vous souhaitez une <strong>rénovation adaptée à une personne à mobilité réduite</strong> ?
                   </p>
                   <p>
-                    Les équipes de SCHAUB Francis ETS font preuve d'une grande <strong>polyvalence</strong>. 
-                    Grâce à la richesse de leurs savoir-faire, nous pouvons <strong>prendre en charge des projets de 
-                    rénovation de salle de bains dans leur intégralité</strong>.
+                    Les <strong>équipes de SCHAUB Francis ETS</strong> allient <strong>polyvalence et expertise </strong> 
+                    pour gérer votre projet de <strong>de A à Z</strong>. Du <strong>conseil à la réalisation</strong>, nous
+                    assurons une <strong>rénovation complète</strong>, soignée et parfaitement coordonnée.
                   </p>
                 </div>
                 
@@ -85,59 +128,59 @@ const SalleDeBains = () => {
               
               <div className="services-intro">
                 <p>
-                  Lorsque vous faites appel à nous pour votre <strong>salle de bains clé en main</strong>, 
-                  vous êtes pris en charge par un <strong>interlocuteur unique</strong>. Nous vous accompagnons 
-                  <strong> depuis l'étude préalable jusqu'à la livraison finale du chantier</strong> :
+                  En nous choisisant pour votre <strong>salle de bains clé en main</strong>, vous bénéficiez d'un interlocuteur
+                  unique du début à la fin. Nous vous accompagnons <strong>de l'étude de votre projet à la livraison du chantier</strong>, 
+                  avec un suivi clair, simple et sans intermédiaire.
                 </p>
               </div>
               
-              <div className="services-timeline">
-                <div className="timeline-item">
+              <div className="services-timeline" ref={timelineRef}>
+                <div className={`timeline-item ${visibleNumbers.includes(1) ? 'visible' : ''}`}>
                   <div className="timeline-number">1</div>
                   <div className="timeline-content">
                     <h4>Réseaux et Infrastructures</h4>
-                    <p>Pose / transformation des réseaux d'arrivée d'eau et des évacuations</p>
+                    <p>Pose et rénovation des réseaux d'eau et d'évacuation.</p>
                   </div>
                 </div>
                 
-                <div className="timeline-item">
+                <div className={`timeline-item ${visibleNumbers.includes(2) ? 'visible' : ''}`}>
                   <div className="timeline-number">2</div>
                   <div className="timeline-content">
                     <h4>Équipements Sanitaires</h4>
-                    <p>Installation des équipements sanitaires : douche avec receveur, douche à l'italienne, baignoire, vasque simple ou double vasque, WC, robinetterie, paroi de douche, meuble sous vasque, colonne de douche, etc.</p>
+                    <p>Douche, baignoire, vasque, WC...  On installe tout !</p>
                   </div>
                 </div>
                 
-                <div className="timeline-item">
+                <div className={`timeline-item ${visibleNumbers.includes(3) ? 'visible' : ''}`}>
                   <div className="timeline-number">3</div>
                   <div className="timeline-content">
                     <h4>Revêtements</h4>
-                    <p>Travaux de plâtrerie (placo hydrofuge)</p>
+                    <p>Pose de placo hydrofuge et finitions de plâtrerie.</p>
                   </div>
                 </div>
                 
-                <div className="timeline-item">
+                <div className={`timeline-item ${visibleNumbers.includes(4) ? 'visible' : ''}`}>
                   <div className="timeline-number">4</div>
                   <div className="timeline-content">
                     <h4>Carrelage</h4>
-                    <p>Pose de carrelage professionnel</p>
+                    <p>Pose soignée de carrelage mural et au sol.</p>
                   </div>
                 </div>
                 
-                <div className="timeline-item">
+                <div className={`timeline-item ${visibleNumbers.includes(5) ? 'visible' : ''}`}>
                   <div className="timeline-number">5</div>
                   <div className="timeline-content">
                     <h4>Finitions</h4>
-                    <p>Travaux de peinture, pose des miroirs, luminaires, etc.</p>
+                    <p>Peinture, miroirs, luminaires... On peaufine chaque détail.</p>
                   </div>
                 </div>
               </div>
               
               <div className="services-conclusion">
                 <div className="conclusion-highlight">
-                  <h3>Notre Promesse</h3>
+                  <h3>Notre promesse</h3>
                   <p>
-                    Nous sommes fiers de livrer des <strong>salles de bains fonctionnelles, esthétiques, où il fait bon vivre</strong>.
+                  Nous créons des salles de bains fonctionnelles, élégantes et pensées pour votre confort au quotidien.
                   </p>
                 </div>
               </div>
@@ -166,14 +209,7 @@ const SalleDeBains = () => {
                     Dans ce contexte, la salle d'eau est souvent une des pièces qu'il convient de transformer en priorité.
                   </p>
                 </div>
-                
-                <div className="pmr-expertise">
-                  <h3>Notre Expertise PMR</h3>
-                  <p>
-                    À Baldersheim et dans le Haut-Rhin, les équipes de SCHAUB Francis ETS placent leurs compétences à votre service pour 
-                    <strong> procéder à l'aménagement PMR de votre salle de bains</strong> :
-                  </p>
-                </div>
+
               </div>
               
               <div className="pmr-services">
@@ -200,15 +236,7 @@ const SalleDeBains = () => {
                     <p>Accès facilité et réduction des risques de chute</p>
                   </div>
                 </div>
-                
-                <div className="pmr-service-card">
-                  <div className="pmr-service-icon">🚿</div>
-                  <div className="pmr-service-content">
-                    <h4>Douche italienne</h4>
-                    <p>Solution idéale pour l'accessibilité sans obstacle</p>
-                  </div>
-                </div>
-                
+
                 <div className="pmr-service-card">
                   <div className="pmr-service-icon">🛡️</div>
                   <div className="pmr-service-content">
@@ -218,18 +246,7 @@ const SalleDeBains = () => {
                 </div>
               </div>
               
-              <div className="pmr-quality">
-                <div className="quality-badge">
-                  <div className="badge-icon">⭐</div>
-                  <div className="badge-content">
-                    <h3>Qualité & Fiabilité</h3>
-                    <p>
-                      Nous travaillons avec soin et sommes particulièrement <strong>attentifs à la solidité et à la fiabilité 
-                      des équipements que nous installons</strong>.
-                    </p>
-                  </div>
-                </div>
-                
+              <div className="pmr-quality">  
                 <div className="contact-cta">
                   <p>
                     <strong>Contactez-nous pour toute demande de renseignement ou de devis gratuit.</strong>

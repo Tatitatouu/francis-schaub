@@ -17,7 +17,7 @@ const Services = () => {
       title: "Sanitaire", 
       description: "Solutions complètes pour votre salle de bain et cuisine",
       features: ["Plomberie complète", "Salles de bain", "Robinetterie", "Adoucisseurs"],
-      link: "/contact"
+      link: "/sanitaire"
     },
     {
       icon: "🔧",

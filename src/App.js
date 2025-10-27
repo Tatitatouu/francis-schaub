@@ -8,7 +8,7 @@ import Chauffage from './pages/Chauffage';
 import EnergiesRenouvelables from './pages/EnergiesRenouvelables';
 import Sanitaire from './pages/Sanitaire';
 import SalleDeBains from './pages/SalleDeBains';
-import AvisClient from './pages/AvisClient';
+import Realisations from './pages/Realisations/Realisations';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <Route path="/energies-renouvelables" element={<EnergiesRenouvelables />} />
           <Route path="/sanitaire" element={<Sanitaire />} />
           <Route path="/salle-de-bains" element={<SalleDeBains />} />
-          <Route path="/avis-client" element={<AvisClient />} />
+          <Route path="/realisations" element={<Realisations />} />
         </Routes>
       </Router>
     </div>

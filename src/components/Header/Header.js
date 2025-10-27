@@ -48,11 +48,6 @@ const Header = ({ variant = 'default' }) => {
                 </a>
               </li>
               <li className="nav-item">
-                <Link to="/avis-client" className="nav-link" onClick={closeMobileMenu}>
-                  AVIS CLIENTS
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>
                   CONTACT
                 </Link>

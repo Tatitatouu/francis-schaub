@@ -44,9 +44,8 @@
 }
 
 .nav-link.home-link:focus {
-  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-  color: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 6px 16px rgba(59, 130, 246, 0.4);
+  background-color: rgba(25, 118, 210, 0.12);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
 }
 
 .nav-link.home-link svg {

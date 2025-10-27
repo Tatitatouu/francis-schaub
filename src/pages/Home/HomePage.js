@@ -3,7 +3,6 @@ import Hero from '../../components/Hero';
 import ProjectCard from '../../components/ProjectCard';
 import Services from '../../components/Services/Services';
 import About from '../../components/About';
-import Rehabilitation from '../../components/Rehabilitation/Rehabilitation';
 import Footer from '../../components/Footer/Footer';
 
 function HomePage() {
@@ -12,10 +11,9 @@ function HomePage() {
       <main>
         <Hero />
       </main>
+      <About />
       <ProjectCard />
       <Services />
-      <About />
-      <Rehabilitation />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header';
 import './Hero.css';
-import heroImage from '../../assets/image/salle-de-bain.jpg';
+import heroImage from '../../assets/image/sdbia.png';
 
 const Hero = () => {
   const hasImage = true; 

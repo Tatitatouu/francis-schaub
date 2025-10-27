@@ -155,17 +155,6 @@ const Sanitaire = () => {
                   C’est pourquoi ils font tout leur possible pour <strong>intervenir rapidement</strong>, s’adapter à l’urgence et rétablir la situation sans tarder.
                 </p>
               </div>
-              
-              <div className="sanitaire-pricing">
-                <div className="sanitaire-price-highlight">
-                  <p><strong>Nos prestations de dépannage sont accessibles à partir de 60 € HT / heure.</strong></p>
-                  <p>
-                    Nous intervenons en faisant preuve d'une grande <strong>transparence</strong>. 
-                    Nous vous informons de manière claire sur toutes les actions qui vont être entreprises pour vous dépanner. 
-                    Avec SCHAUB Francis ETS, aucune mauvaise surprise :
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
         </div>

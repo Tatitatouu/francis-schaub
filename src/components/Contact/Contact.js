@@ -65,7 +65,6 @@ const Contact = () => {
           email: '',
           phone: '',
           service: '',
-          urgency: 'normal',
           message: ''
         });
       } else {
@@ -224,19 +223,6 @@ const Contact = () => {
                             {service}
                           </option>
                         ))}
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="urgency">Urgence</label>
-                      <select
-                        id="urgency"
-                        name="urgency"
-                        value={formData.urgency}
-                        onChange={handleInputChange}
-                      >
-                        <option value="normal">Normal</option>
-                        <option value="urgent">Urgent (sous 48h)</option>
-                        <option value="emergency">Urgence (immédiat)</option>
                       </select>
                     </div>
                   </div>
