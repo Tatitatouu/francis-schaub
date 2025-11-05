@@ -147,7 +147,7 @@ const Realisations = () => {
 
   return (
     <div className="realisations-page page-with-hero">
-      <Header />
+      <Header variant="realisations" />
       
       <main className="realisations-main page-content">
         <section className="realisations-hero">

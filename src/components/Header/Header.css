@@ -1,4 +1,270 @@
 /* Header.css */
+
+/* Header variants */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+}
+
+.header .header-content {
+  transition: padding 0.4s ease-in-out;
+}
+
+.header .logo-img {
+  transition: height 0.4s ease-in-out;
+}
+
+.header .nav-link {
+  transition: all 0.4s ease-in-out;
+}
+
+.header .nav-link.home-link svg {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Barre de progression du scroll */
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(25, 118, 210, 0.6), rgba(25, 118, 210, 0.8));
+  transition: width 0.15s ease-out;
+  z-index: 1001;
+}
+
+.header-hero .scroll-progress-bar {
+  display: none;
+}
+
+/* Hero header - pas de fixed, reste dans le flux normal */
+.header-hero {
+  position: absolute;
+  background: transparent;
+}
+
+.header-hero .nav-link {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-hero .nav-link.home-link {
+  color: white;
+}
+
+.header-hero .nav-dropdown-trigger {
+  color: white;
+}
+
+/* Header réduit au scroll - plus visible (pas pour hero) */
+.header.scrolled:not(.header-hero) {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.header.scrolled:not(.header-hero) .header-content {
+  padding: 0.3rem 0;
+}
+
+.header.scrolled:not(.header-hero) .logo-img {
+  height: 32px;
+}
+
+.header.scrolled:not(.header-hero) .nav-link {
+  padding: 0.4rem 0.8rem;
+  font-size: 12px;
+}
+
+.header.scrolled:not(.header-hero) .nav-link.home-link {
+  padding: 0.5rem;
+}
+
+.header.scrolled:not(.header-hero) .nav-link.home-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Default header - blanc semi-transparent */
+.header-default {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(25, 118, 210, 0.1);
+}
+
+.header-default .nav-link {
+  color: #333;
+}
+
+.header-default .nav-link.home-link {
+  color: #333;
+}
+
+.header-default .nav-link:hover {
+  background-color: rgba(25, 118, 210, 0.08);
+  color: #1976D2;
+}
+
+.header-default .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Realisations header - accent bleu-vert */
+.header-realisations {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(74, 144, 164, 0.3);
+}
+
+.header-realisations .nav-link {
+  color: #333;
+}
+
+.header-realisations .nav-link.home-link {
+  color: #333;
+}
+
+.header-realisations .nav-link:hover {
+  background-color: rgba(74, 144, 164, 0.08);
+  color: #4a90a4;
+}
+
+.header-realisations .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Contact header */
+.header-contact {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(25, 118, 210, 0.1);
+}
+
+.header-contact .nav-link {
+  color: #333;
+}
+
+.header-contact .nav-link.home-link {
+  color: #333;
+}
+
+.header-contact .nav-link:hover {
+  background-color: rgba(25, 118, 210, 0.08);
+  color: #1976D2;
+}
+
+.header-contact .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Chauffage header - accent orangé */
+.header-chauffage {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(224, 138, 111, 0.3);
+}
+
+.header-chauffage .nav-link {
+  color: #333;
+}
+
+.header-chauffage .nav-link.home-link {
+  color: #333;
+}
+
+.header-chauffage .nav-link:hover {
+  background-color: rgba(224, 138, 111, 0.08);
+  color: #e08a6f;
+}
+
+.header-chauffage .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Sanitaire header - accent marron */
+.header-sanitaire {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(184, 120, 80, 0.3);
+}
+
+.header-sanitaire .nav-link {
+  color: #333;
+}
+
+.header-sanitaire .nav-link.home-link {
+  color: #333;
+}
+
+.header-sanitaire .nav-link:hover {
+  background-color: rgba(184, 120, 80, 0.08);
+  color: #b87850;
+}
+
+.header-sanitaire .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Salle de bains header - accent bleu clair */
+.header-salledebains {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(74, 144, 164, 0.3);
+}
+
+.header-salledebains .nav-link {
+  color: #333;
+}
+
+.header-salledebains .nav-link.home-link {
+  color: #333;
+}
+
+.header-salledebains .nav-link:hover {
+  background-color: rgba(74, 144, 164, 0.08);
+  color: #4a90a4;
+}
+
+.header-salledebains .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Énergies Renouvelables header - accent vert */
+.header-energies {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(67, 160, 71, 0.3);
+}
+
+.header-energies .nav-link {
+  color: #333;
+}
+
+.header-energies .nav-link.home-link {
+  color: #333;
+}
+
+.header-energies .nav-link:hover {
+  background-color: rgba(67, 160, 71, 0.08);
+  color: #43a047;
+}
+
+.header-energies .nav-dropdown-trigger {
+  color: #333;
+}
+
+/* Container and basic layout */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
 .logo { text-decoration: none; }

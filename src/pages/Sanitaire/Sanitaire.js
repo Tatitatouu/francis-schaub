@@ -6,7 +6,7 @@ import './Sanitaire.css';
 const Sanitaire = () => {
   return (
     <div className="sanitaire-page">
-      <Header />
+      <Header variant="sanitaire" />
       
       <main className="sanitaire-main">
         <section className="sanitaire-hero">

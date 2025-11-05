@@ -50,7 +50,7 @@ const SalleDeBains = () => {
 
   return (
     <div className="salle-bains-page page-with-hero">
-      <Header />
+      <Header variant="salledebains" />
       
       <main className="salle-bains-main page-content">
         <section className="salle-bains-hero">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home } from 'lucide-react';
 import './Header.css';
@@ -8,6 +8,27 @@ import MobileBurgerMenu from './MobileBurgerMenu';
 
 const Header = ({ variant = 'default' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Détection du scroll pour réduire le header
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Calcul de la progression du scroll
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      setScrollProgress(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -18,7 +39,8 @@ const Header = ({ variant = 'default' }) => {
   };
 
   return (
-    <header className={`header header-${variant}`}>
+    <header className={`header header-${variant} ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo" aria-label="Accueil Francis Schaub">
@@ -43,9 +65,9 @@ const Header = ({ variant = 'default' }) => {
               </li>
               <NavDropdown onMobileClose={closeMobileMenu} />
               <li className="nav-item">
-                <a href="#realisations" className="nav-link" onClick={closeMobileMenu}>
+                <Link to="/realisations" className="nav-link" onClick={closeMobileMenu}>
                   NOS RÉALISATIONS
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>

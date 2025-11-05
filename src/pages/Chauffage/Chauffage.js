@@ -6,7 +6,7 @@ import './Chauffage.css';
 const Chauffage = () => {
   return (
     <div className="chauffage-page">
-      <Header />
+      <Header variant="chauffage" />
       
       <main className="chauffage-main">
         <section className="chauffage-hero">
