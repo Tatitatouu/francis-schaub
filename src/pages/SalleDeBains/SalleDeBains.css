@@ -70,6 +70,8 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
+  padding: 1.5em 0;
+
 }
 
 .salle-bains-hero-title {
@@ -91,6 +93,7 @@
   margin-bottom: 3rem;
   opacity: 0.95;
   color: var(--sdb-neutral);
+  text-align: center;
 }
 
 /* Features dans le hero */
@@ -286,6 +289,7 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: var(--sdb-text);
+  padding: 0 1rem;
 }
 
 .services-intro strong {
@@ -408,9 +412,21 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 5px;
   height: 100%;
-  background: linear-gradient(135deg, rgba(95, 158, 160, 0.05) 0%, rgba(143, 188, 143, 0.05) 100%);
+  background: linear-gradient(180deg, var(--sdb-primary) 0%, var(--sdb-secondary) 50%, var(--sdb-accent) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at top right, rgba(95, 158, 160, 0.08) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -422,37 +438,73 @@
 
 .timeline-content:hover {
   box-shadow: 
-    0 20px 60px rgba(95, 158, 160, 0.15),
+    0 20px 60px rgba(95, 158, 160, 0.2),
     0 0 0 1px rgba(95, 158, 160, 0.2);
-  transform: translateY(-5px);
-  border-left-width: 6px;
+  transform: translateY(-8px) scale(1.02);
 }
 
 .timeline-content:hover::before {
   opacity: 1;
+  width: 6px;
 }
 
-.timeline-content h3 {
+.timeline-content:hover::after {
+  opacity: 1;
+}
+
+.timeline-content h4 {
   color: var(--sdb-primary);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
 }
 
-.timeline-content h3::before {
-  content: '💎';
-  font-size: 1.3rem;
-  filter: grayscale(0.3);
+.timeline-content h4::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--sdb-primary), var(--sdb-secondary));
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(95, 158, 160, 0.5);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(95, 158, 160, 0.5);
+  }
+  50% {
+    transform: scale(1.3);
+    box-shadow: 0 0 20px rgba(95, 158, 160, 0.8);
+  }
 }
 
 .timeline-content p {
-  color: #4a5568;
+  color: #475569;
   line-height: 1.8;
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  padding-left: 1.5rem;
+}
+
+.timeline-content p::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--sdb-accent);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* Responsive design */
@@ -468,11 +520,15 @@
   }
   
   .timeline-content {
-    padding: 1.5rem;
+    padding: 2rem;
   }
   
-  .timeline-content h3 {
-    font-size: 1.25rem;
+  .timeline-content h4 {
+    font-size: 1.35rem;
+  }
+  
+  .timeline-content p {
+    font-size: 1rem;
   }
 }
 
@@ -514,6 +570,7 @@
 .pmr-context {
   max-width: 800px;
   margin: 0 auto 3rem;
+  padding: 0 1rem;
 }
 
 .pmr-context p {
@@ -596,10 +653,6 @@
    PMR QUALITY SECTION
    =========================================== */
 
-.pmr-quality {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 .quality-badge {
   background: rgba(255, 255, 255, 0.15);
@@ -637,22 +690,6 @@
   font-weight: 700;
 }
 
-.contact-cta {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.contact-cta p {
-  font-size: 1.2rem;
-  color: #f1f5f9;
-  margin: 0;
-  font-weight: 600;
-}
-
 /* ===========================================
    RESPONSIVE DESIGN
    =========================================== */
@@ -666,7 +703,7 @@
   .intro-highlight {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
+    gap: 0.1rem;
   }
   
   .pmr-services {
@@ -692,7 +729,7 @@
   }
   
   .salle-bains-hero-features {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
   }
   
@@ -719,8 +756,15 @@
 }
 
 @media (max-width: 480px) {
+  .salle-bains-hero-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
   .salle-bains-container {
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
+  }
+  
+  .salle-bains-hero-content {
+    padding: 1em;
   }
   
   .salle-bains-section {
@@ -728,7 +772,12 @@
   }
   
   .salle-bains-sections-wrapper {
-    margin: -1.5rem 0.5rem 0;
+    margin: -1.5rem 0 0;
+    padding: 0.5em;
+  }
+  
+  .salle-bains-hero-features {
+    padding: 0 0.5rem;
   }
   
   .intro-highlight,
@@ -738,7 +787,7 @@
   .pmr-service-card,
   .quality-badge,
   .contact-cta {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   
   .pmr-services {

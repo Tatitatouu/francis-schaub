@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { prestationsItems } from './servicesData';
+import { sanitairePrestationsItems, carrelagePrestationsItems } from './servicesData';
 
-const NavDropdown = ({ onMobileClose }) => {
+const NavDropdown = ({ onMobileClose, section = 'sanitaire' }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+
+  // Sélection des items selon la section
+  const prestationsItems = section === 'carrelage' ? carrelagePrestationsItems : sanitairePrestationsItems;
 
   const close = useCallback(() => {
     setOpen(false);

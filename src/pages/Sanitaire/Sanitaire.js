@@ -1,11 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
+import BackToTop from '../../components/BackToTop';
+import { SEO_PAGES, getServiceSchema, getBreadcrumbSchema } from '../../config/seoConfig';
 import './Sanitaire.css';
 
 const Sanitaire = () => {
   return (
-    <div className="sanitaire-page">
+    <>
+      <Helmet>
+        <title>{SEO_PAGES.plomberie.title}</title>
+        <meta name="description" content={SEO_PAGES.plomberie.description} />
+        <link rel="canonical" href="https://www.francis-schaub.fr/sanitaire" />
+        <script type="application/ld+json">
+          {JSON.stringify(getServiceSchema('Plomberie et Sanitaire', SEO_PAGES.plomberie.description))}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getBreadcrumbSchema([
+            { name: 'Accueil', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Plomberie', url: '/sanitaire' }
+          ]))}
+        </script>
+      </Helmet>
+      <div className="sanitaire-page">
       <Header variant="sanitaire" />
       
       <main className="sanitaire-main">
@@ -13,7 +32,7 @@ const Sanitaire = () => {
           <div className="sanitaire-container">
             <div className="sanitaire-hero-content">
               <h1 className="sanitaire-hero-title">
-                Votre Spécialiste de la Plomberie et de l'Installation Sanitaire à Baldersheim (68)
+                Votre spécialiste de la plomberie et de l'installation sanitaire à Baldersheim (68)
               </h1>
               <p className="sanitaire-hero-subtitle">
                 Équipe expérimentée pour tous vos projets sanitaires dans le Haut-Rhin
@@ -161,7 +180,9 @@ const Sanitaire = () => {
       </main>
 
       <Footer />
-    </div>
+      <BackToTop />
+      </div>
+    </>
   );
 };
 

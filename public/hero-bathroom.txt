@@ -1,4 +1,0 @@
-Placez ici votre image hero en la nommant hero-bathroom.jpg
-Taille conseillée: 2200x1400 (optimisée ~350-500KB)
-Compression recommandée: utilise squoosh.app ou tinypng.com
-Alt text suggéré: Salle de bain moderne lumineuse avec baignoire et douche vitrée

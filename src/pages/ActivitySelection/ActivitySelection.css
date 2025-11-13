@@ -1,0 +1,208 @@
+﻿/* === Layout global === */
+.activity-selection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  color: #1f2937;
+  padding: 3rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* === Header === */
+.activity-selection__header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.activity-selection__title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.activity-selection__logo {
+  width: 220px;
+  margin: 0.5rem auto 1rem;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.05));
+}
+
+.activity-selection__subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* === Sections container === */
+.activity-selection__sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* === Section Card === */
+.activity-section {
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+}
+
+.activity-section__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.activity-section:hover .activity-section__gradient {
+  opacity: 1;
+}
+
+/* === Section Content === */
+.activity-section__content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.activity-section:hover .activity-section__content {
+  transform: translateY(-6px);
+}
+
+.activity-section__icon svg {
+  color: #0ea5e9;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.activity-section:hover .activity-section__icon svg {
+  transform: scale(1.1);
+  color: #0284c7;
+}
+
+.activity-section__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.activity-section__subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* === Features === */
+.activity-section__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.feature-pill {
+  background: #f3f4f6;
+  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.activity-section:hover .feature-pill {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* === Arrow === */
+.activity-section__arrow {
+  margin-top: 1rem;
+  color: #0284c7;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.activity-section:hover .activity-section__arrow {
+  transform: translateX(6px);
+  color: #0ea5e9;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activity-selection__subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .activity-selection__title {
+    font-size: 1.5rem;
+  }
+
+  .activity-selection__subtitle {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .activity-section__content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .activity-selection {
+    padding: 2rem 0.75rem;
+  }
+
+  .activity-selection__logo {
+    width: 180px;
+  }
+
+  .activity-selection__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .activity-section__title {
+    font-size: 1.2rem;
+  }
+
+  .activity-section__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .feature-pill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

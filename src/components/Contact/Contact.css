@@ -28,7 +28,8 @@
 
 .contact-header {
   text-align: center;
-  margin-bottom: 3em;
+  padding: 4em 0;
+
 }
 
 .contact-label {
@@ -498,6 +499,11 @@
     flex: none;
   }
   
+  .contact-card,
+  .contact-form-card {
+    height: auto;
+  }
+  
   .map-container {
     max-width: 100%;
   }
@@ -510,10 +516,6 @@
   
   .contact-container {
     padding: 0 1rem;
-  }
-  
-  .contact-header {
-    margin-bottom: 60px;
   }
   
   .contact-title {
@@ -563,11 +565,18 @@
   
   .contact-item {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     gap: 12px;
   }
   
   .contact-text {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .contact-text h4,
+  .contact-text p,
+  .contact-note {
     text-align: center;
   }
   

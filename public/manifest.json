@@ -1,25 +1,52 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Francis Schaub - Artisan Plombier Chauffagiste Carreleur à Baldersheim",
+  "short_name": "Francis Schaub",
+  "description": "Artisan plombier, chauffagiste et carreleur à Mulhouse, Alsace. Services de qualité en plomberie, chauffage, salle de bains et pose de carrelage.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0076bd",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "logo192.png",
+      "src": "/logo192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "maskable"
     },
     {
-      "src": "logo512.png",
+      "src": "/logo512.png",
+      "sizes": "512x512",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Page d'accueil Francis Schaub"
+    },
+    {
+      "src": "/screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Services - Plomberie Chauffage Carrelage"
+    }
+  ],
+  "categories": ["business", "services", "home_improvement"],
+  "screenshots_alt": "Services de plomberie, chauffage et carrelage",
+  "prefer_related_applications": false,
+  "lang": "fr-FR",
+  "dir": "ltr"
 }

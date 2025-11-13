@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
+import BackToTop from '../../components/BackToTop';
+import { SEO_PAGES, getServiceSchema, getBreadcrumbSchema } from '../../config/seoConfig';
 import './SalleDeBains.css';
 
 const SalleDeBains = () => {
@@ -49,7 +52,23 @@ const SalleDeBains = () => {
   }, []);
 
   return (
-    <div className="salle-bains-page page-with-hero">
+    <>
+      <Helmet>
+        <title>{SEO_PAGES.salleDeBains.title}</title>
+        <meta name="description" content={SEO_PAGES.salleDeBains.description} />
+        <link rel="canonical" href="https://www.francis-schaub.fr/salle-de-bains" />
+        <script type="application/ld+json">
+          {JSON.stringify(getServiceSchema('Rénovation de Salle de Bains', SEO_PAGES.salleDeBains.description))}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getBreadcrumbSchema([
+            { name: 'Accueil', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Salle de Bains', url: '/salle-de-bains' }
+          ]))}
+        </script>
+      </Helmet>
+      <div className="salle-bains-page page-with-hero">
       <Header variant="salledebains" />
       
       <main className="salle-bains-main page-content">
@@ -57,7 +76,7 @@ const SalleDeBains = () => {
           <div className="salle-bains-container">
             <div className="salle-bains-hero-content">
               <h1 className="salle-bains-hero-title">
-                Succombez au Confort de la Salle de Bains Clé en Main !
+                Succombez au confort de la salle de bains clé en main !
               </h1>
               <p className="salle-bains-hero-subtitle">
                 Rénovation complète et aménagements sur mesure à Baldersheim
@@ -171,7 +190,7 @@ const SalleDeBains = () => {
                   <div className="timeline-number">5</div>
                   <div className="timeline-content">
                     <h4>Finitions</h4>
-                    <p>Peinture, miroirs, luminaires... On peaufine chaque détail.</p>
+                    <p>Peinture, miroirs... On peaufine chaque détail.</p>
                   </div>
                 </div>
               </div>
@@ -245,21 +264,14 @@ const SalleDeBains = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="pmr-quality">  
-                <div className="contact-cta">
-                  <p>
-                    <strong>Contactez-nous pour toute demande de renseignement ou de devis gratuit.</strong>
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
         </div>
       </main>
-
       <Footer />
-    </div>
+      <BackToTop />
+      </div>
+    </>
   );
 };
 

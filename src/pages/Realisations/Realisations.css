@@ -25,8 +25,8 @@
 
 .realisations-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  padding-top: 4em;
+  padding-bottom: 3em;
 }
 
 .realisations-sections-wrapper {
@@ -63,11 +63,27 @@
    HERO SECTION
    =========================================== */
 .realisations-hero {
-  background: linear-gradient(135deg, #3a7080 0%, #4a90a4 50%, #6ba3b8 100%);
+  background-image: linear-gradient(135deg, rgba(58, 112, 128, 0.5) 0%, rgba(74, 144, 164, 0.5) 50%, rgba(107, 163, 184, 0.6) 100%),
+                    url('../../../public/images/réalisations.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
   padding: 8rem 0 6rem;
   position: relative;
   overflow: hidden;
+  animation: heroImageFadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes heroImageFadeIn {
+  from {
+    opacity: 0;
+    background-position: center 10px;
+  }
+  to {
+    opacity: 1;
+    background-position: center;
+  }
 }
 
 .realisations-hero::before {
@@ -90,7 +106,7 @@
 }
 
 .realisations-hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -98,7 +114,7 @@
 }
 
 .realisations-hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 400;
   margin-bottom: 4rem;
   opacity: 0.95;
@@ -119,14 +135,13 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--real-text);
-  margin-top: 2em;
 }
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--real-text-light);
   font-weight: 400;
 }
@@ -138,7 +153,6 @@
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 0;
 }
 
 .carousel-content {
@@ -246,6 +260,15 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.realisation-image-container picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .realisation-image {
@@ -286,7 +309,7 @@
 }
 
 .realisation-content h3 {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 700;
   color: var(--real-text);
   margin-bottom: 1.25rem;
@@ -572,6 +595,7 @@
   
   .intro-text {
     font-size: 1.1rem;
+    padding : 0 1rem;
   }
   
   .carousel-btn.prev,

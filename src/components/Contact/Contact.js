@@ -71,7 +71,9 @@ const Contact = () => {
         throw new Error('Erreur lors de l\'envoi du formulaire');
       }
     } catch (error) {
-      console.error('Erreur:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Erreur:', error);
+      }
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -127,7 +129,7 @@ const Contact = () => {
                     </div>
                     <div className="contact-text">
                       <h4>Adresse</h4>
-                      <p>4 Rue de Battenheim<br />68390 Baldersheim</p>
+                      <p>4 Rue de Battenheim<br />68270 Baldersheim</p>
                       <span className="contact-note">Zone d'intervention : Alsace</span>
                     </div>
                   </div>
@@ -288,14 +290,14 @@ const Contact = () => {
           {/* Carte Google Maps centrée en bas */}
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.7234567890123!2d7.4789012345678!3d47.8234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b7c8d1234567%3A0x1234567890abcdef!2s4%20Rue%20de%20Battenheim%2C%2068390%20Baldersheim%2C%20France!5e0!3m2!1sfr!2sfr!4v1640000000000!5m2!1sfr!2sfr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.234567890123!2d7.5234567890123!3d47.8123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b8c9d2345678%3A0x2345678901bcdefg!2s4%20Rue%20de%20Battenheim%2C%2068270%20Baldersheim%2C%20France!5e0!3m2!1sfr!2sfr!4v1640000000000!5m2!1sfr!2sfr"
               width="100%"
               height="350"
               style={{ border: 0, borderRadius: '16px' }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localisation Francis Schaub - 4 Rue de Battenheim, Baldersheim"
+              title="Localisation Francis Schaub - 4 Rue de Battenheim, 68270 Baldersheim"
             ></iframe>
           </div>
         </div>

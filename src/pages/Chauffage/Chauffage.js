@@ -1,11 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
+import BackToTop from '../../components/BackToTop';
+import { SEO_PAGES, getServiceSchema, getBreadcrumbSchema } from '../../config/seoConfig';
 import './Chauffage.css';
 
 const Chauffage = () => {
   return (
-    <div className="chauffage-page">
+    <>
+      <Helmet>
+        <title>{SEO_PAGES.chauffage.title}</title>
+        <meta name="description" content={SEO_PAGES.chauffage.description} />
+        <link rel="canonical" href="https://www.francis-schaub.fr/chauffage" />
+        <script type="application/ld+json">
+          {JSON.stringify(getServiceSchema('Chauffage et Pompes à Chaleur', SEO_PAGES.chauffage.description))}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getBreadcrumbSchema([
+            { name: 'Accueil', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Chauffage', url: '/chauffage' }
+          ]))}
+        </script>
+      </Helmet>
+      <div className="chauffage-page">
       <Header variant="chauffage" />
       
       <main className="chauffage-main">
@@ -13,7 +32,7 @@ const Chauffage = () => {
           <div className="chauffage-container">
             <div className="chauffage-hero-content">
               <h1 className="chauffage-hero-title">
-                Installation de Chaudières Gaz, Fioul & Bois
+                Installation de chaudières gaz, fioul & bois
               </h1>
               <p className="chauffage-hero-subtitle">
                 Des chauffagistes expérimentés au service de vos projets à Baldersheim (Haut-Rhin)
@@ -191,7 +210,9 @@ const Chauffage = () => {
       </main>
 
       <Footer />
-    </div>
+      <BackToTop />
+      </div>
+    </>
   );
 };
 

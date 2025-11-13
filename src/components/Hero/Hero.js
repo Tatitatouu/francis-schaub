@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from '../Header';
 import './Hero.css';
-import heroImage from '../../assets/image/sdbia.png';
+import heroImage from '../../assets/image/sdbia.webp';
 
 const Hero = () => {
-  const hasImage = true; 
-  const bgStyle = hasImage ? { backgroundImage: `url(${heroImage})` } : undefined;
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const heroBgRef = useRef(null);
+
+  useEffect(() => {
+    // Intersection Observer for lazy loading
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageLoaded(true);
+          // Stop observing once image is triggered to load
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: '50px' }
+    );
+
+    const currentRef = heroBgRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  const bgStyle = imageLoaded ? { backgroundImage: `url(${heroImage})` } : undefined;
+
   return (
     <section className="hero">
-      <div className={`hero-bg ${hasImage ? 'has-image' : ''}`} style={bgStyle} />
+      <div 
+        ref={heroBgRef}
+        className={`hero-bg ${imageLoaded ? 'has-image' : ''}`} 
+        style={bgStyle} 
+      />
       <Header variant="hero" />
       <div className="hero-media-overlay" />
       <div className="hero-gradient-left" />
@@ -23,9 +55,6 @@ const Hero = () => {
             </h1>
             <p className="hero-subtitle">
               Votre confort, notre priorité
-            </p>
-            <p className="hero-description">
-              Installation, rénovation & dépannage dans tout le Haut-Rhin.
             </p>
           </div>
         </div>

@@ -1,11 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
+import BackToTop from '../../components/BackToTop';
+import { SEO_PAGES, getServiceSchema, getBreadcrumbSchema } from '../../config/seoConfig';
 import './EnergiesRenouvelables.css';
 
 const EnergiesRenouvelables = () => {
   return (
-    <div className="energies-page">
+    <>
+      <Helmet>
+        <title>{SEO_PAGES.energiesRenouvelables.title}</title>
+        <meta name="description" content={SEO_PAGES.energiesRenouvelables.description} />
+        <link rel="canonical" href="https://www.francis-schaub.fr/energies-renouvelables" />
+        <script type="application/ld+json">
+          {JSON.stringify(getServiceSchema('Énergies Renouvelables', SEO_PAGES.energiesRenouvelables.description))}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getBreadcrumbSchema([
+            { name: 'Accueil', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Énergies Renouvelables', url: '/energies-renouvelables' }
+          ]))}
+        </script>
+      </Helmet>
+      <div className="energies-page">
       <Header />
       
       <main className="energies-main">
@@ -13,7 +32,7 @@ const EnergiesRenouvelables = () => {
           <div className="energies-container">
             <div className="energies-hero-content">
               <h1 className="energies-hero-title">
-                Installateur Pompe à Chaleur & Panneaux Solaires à Baldersheim (Haut-Rhin)
+                Installateur pompe à chaleur & panneaux solaires à Baldersheim (Haut-Rhin)
               </h1>
               <p className="energies-hero-subtitle">
                 Pour se chauffer autrement et durablement
@@ -272,7 +291,9 @@ const EnergiesRenouvelables = () => {
       </main>
 
       <Footer />
-    </div>
+      <BackToTop />
+      </div>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: <Users />, value: '25+', label: 'Années d\'expérience' },
+    { icon: <Users />, value: '30+', label: 'Années d\'expérience' },
     { icon: <Award />, value: '25+', label: 'Professionnels' },
     { icon: <MapPin />, value: 'Haut-Rhin', label: 'Zone d\'intervention' },
     { icon: <Leaf />, value: 'RGE', label: 'Certifié environnement' }
@@ -25,7 +25,7 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <h2 className="about-title">
-              Plus de 25 ans d'expertise en énergies renouvelables
+              Plus de 30 ans d'expertise en énergies renouvelables
             </h2>
             <p className="about-description">
               Basé à Baldersheim dans le Haut-Rhin, SCHAUB Francis ETS 
@@ -36,7 +36,7 @@ const About = () => {
             <div className="about-highlights">
               <h3>Notre expertise</h3>
               <p>
-                Entreprise familiale composée de plus de 25 professionnels compétents, nous mettons 
+                Entreprise composée de plus de 25 professionnels compétents, nous mettons 
                 notre savoir-faire au service de particuliers et professionnels dans tous
                 les secteurs du Haut-Rhin.
               </p>
