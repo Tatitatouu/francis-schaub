@@ -4,42 +4,18 @@ import './Hero.css';
 import heroImage from '../../assets/image/sdbia.webp';
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(true);
   const heroBgRef = useRef(null);
-
-  useEffect(() => {
-    // Intersection Observer for lazy loading
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setImageLoaded(true);
-          // Stop observing once image is triggered to load
-          observer.unobserve(entry.target);
-        }
-      },
-      { rootMargin: '50px' }
-    );
-
-    const currentRef = heroBgRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
-  const bgStyle = imageLoaded ? { backgroundImage: `url(${heroImage})` } : undefined;
 
   return (
     <section className="hero">
-      <div 
+      <img
         ref={heroBgRef}
-        className={`hero-bg ${imageLoaded ? 'has-image' : ''}`} 
-        style={bgStyle} 
+        src={heroImage}
+        alt="Hero Background"
+        className="hero-bg-image"
+        fetchPriority="high"
+        decoding="async"
       />
       <Header variant="hero" />
       <div className="hero-media-overlay" />
