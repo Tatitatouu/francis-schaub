@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Header from '../Header';
 import './Hero.css';
 import heroImage from '../../assets/image/sdbia.webp';
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(true);
   const heroBgRef = useRef(null);
 
   return (

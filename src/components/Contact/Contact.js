@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, AlertCircle, CheckCircle } from 'lucide-react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import './Contact.css';
 
 const Contact = () => {
@@ -12,6 +13,8 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const captchaRef = useRef();
 
   const services = [
     'Chauffage',
@@ -32,6 +35,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Vérifier que le captcha est validé
+    if (!captchaToken) {
+      setSubmitStatus('captcha-error');
+      setTimeout(() => setSubmitStatus(null), 5000);
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
@@ -46,6 +57,7 @@ const Contact = () => {
       formDataToSend.append('subject', `Nouvelle demande de devis - ${formData.service || 'Service non spécifié'}`);
       formDataToSend.append('from_name', formData.name);
       formDataToSend.append('redirect', 'false');
+      formDataToSend.append('h-captcha-response', captchaToken);
 
       // Envoi vers Web3Forms
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -64,6 +76,10 @@ const Contact = () => {
           service: '',
           message: ''
         });
+        setCaptchaToken(null);
+        if (captchaRef.current) {
+          captchaRef.current.resetCaptcha();
+        }
       } else {
         throw new Error('Erreur lors de l\'envoi du formulaire');
       }
@@ -76,6 +92,10 @@ const Contact = () => {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 5000);
     }
+  };
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
   };
 
   return (
@@ -246,6 +266,18 @@ const Contact = () => {
                     </label>
                   </div>
 
+                  {/* hCaptcha */}
+                  <div className="form-captcha">
+                    <HCaptcha
+                      ref={captchaRef}
+                      sitekey="ee3c2580-756c-4dae-b578-9c0e1772f668"
+                      onVerify={handleCaptchaChange}
+                      onExpire={() => setCaptchaToken(null)}
+                      theme="light"
+                      size="normal"
+                    />
+                  </div>
+
                   <button 
                     type="submit" 
                     className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
@@ -271,6 +303,11 @@ const Contact = () => {
                       <>
                         <CheckCircle />
                         <span>Message envoyé avec succès ! Nous vous recontactons rapidement.</span>
+                      </>
+                    ) : submitStatus === 'captcha-error' ? (
+                      <>
+                        <AlertCircle />
+                        <span>Veuillez valider le captcha avant d'envoyer le formulaire.</span>
                       </>
                     ) : (
                       <>
