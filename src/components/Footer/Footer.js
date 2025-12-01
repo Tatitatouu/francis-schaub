@@ -63,7 +63,6 @@ const Footer = () => {
             <div className="footer-legal">
               <Link to="/mentions-legales">Mentions légales</Link>
               <Link to="/confidentialite">Confidentialité</Link>
-              <Link to="/cgv">CGV</Link>
             </div>
           </div>
         </div>

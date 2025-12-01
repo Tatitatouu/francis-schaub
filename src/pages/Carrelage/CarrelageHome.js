@@ -38,9 +38,6 @@ function CarrelageHome() {
             faïence et mosaïque pour l'intérieur comme l'extérieur
           </p>
           <div className="carrelage-hero__cta">
-            <a href="#services" className="carrelage-hero__btn carrelage-hero__btn--primary">
-              Nos services
-            </a>
             <Link to="/carrelage/contact" className="carrelage-hero__btn carrelage-hero__btn--secondary">
               Nous contacter
             </Link>
@@ -172,7 +169,7 @@ function CarrelageHome() {
           <div className="carrelage-avantages__banner">
             <div className="carrelage-avantages__item">
               <CheckCircle size={24} />
-              <span>20 ans d'expertise</span>
+              <span>30 ans d'expertise</span>
             </div>
             <div className="carrelage-avantages__item">
               <CheckCircle size={24} />
@@ -189,7 +186,6 @@ function CarrelageHome() {
           </div>
         </div>
       </section>
-
       <Footer />
       <ProjectCard />
       <BackToTop />

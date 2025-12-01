@@ -12,7 +12,9 @@ export const GA4_ID = 'G-XXXXXXXXXX'; // À remplacer avec l'ID GA4
  */
 export const initializeGA = (gaId = GA4_ID) => {
   if (!gaId) {
-    console.warn('Google Analytics ID not configured');
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Google Analytics ID not configured');
+    }
     return;
   }
 

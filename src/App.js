@@ -14,7 +14,6 @@ import Realisations from './pages/Realisations/Realisations';
 import CarrelageHome from './pages/Carrelage';
 import MentionsLegales from './pages/MentionsLegales';
 import Confidentialite from './pages/Confidentialite';
-import CGV from './pages/CGV';
 import ScrollToTop from './components/ScrollToTop';
 import CookieBanner from './components/CookieBanner';
 
@@ -58,9 +57,6 @@ function App() {
 
           {/* Page Confidentialité */}
           <Route path="/confidentialite" element={<Confidentialite />} />
-
-          {/* Page CGV */}
-          <Route path="/cgv" element={<CGV />} />
         </Routes>
       </Router>
       </div>

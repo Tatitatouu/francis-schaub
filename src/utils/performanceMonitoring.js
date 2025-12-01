@@ -30,7 +30,9 @@ export const monitorLCP = () => {
       // Disconnect after 5 seconds
       setTimeout(() => observer.disconnect(), 5000);
     } catch (error) {
-      console.error('LCP monitoring error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('LCP monitoring error:', error);
+      }
     }
   }
 };
@@ -58,7 +60,9 @@ export const monitorCLS = () => {
       
       observer.observe({ entryTypes: ['layout-shift'] });
     } catch (error) {
-      console.error('CLS monitoring error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('CLS monitoring error:', error);
+      }
     }
   }
 };
@@ -82,7 +86,9 @@ export const monitorFID = () => {
       
       observer.observe({ entryTypes: ['first-input'] });
     } catch (error) {
-      console.error('FID monitoring error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('FID monitoring error:', error);
+      }
     }
   }
 };
@@ -106,7 +112,9 @@ export const monitorTTFB = () => {
       
       observer.observe({ entryTypes: ['navigation'] });
     } catch (error) {
-      console.error('TTFB monitoring error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('TTFB monitoring error:', error);
+      }
     }
   }
 };

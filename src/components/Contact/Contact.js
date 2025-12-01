@@ -8,7 +8,6 @@ const Contact = () => {
     email: '',
     phone: '',
     service: '',
-    urgency: 'normal',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,7 +19,6 @@ const Contact = () => {
     'Climatisation',
     'Énergies renouvelables',
     'Réhabilitation',
-    'Dépannage d\'urgence',
     'Autre'
   ];
 
@@ -44,7 +42,6 @@ const Contact = () => {
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
       formDataToSend.append('service', formData.service);
-      formDataToSend.append('urgency', formData.urgency);
       formDataToSend.append('message', formData.message);
       formDataToSend.append('subject', `Nouvelle demande de devis - ${formData.service || 'Service non spécifié'}`);
       formDataToSend.append('from_name', formData.name);
