@@ -6,28 +6,28 @@ const path = require('path');
 
 const IMAGES_TO_OPTIMIZE = [
   {
-    input: 'public/images/carrelage-int.jpeg',
-    maxWidth: 1200,
-    quality: 80,
+    input: 'public/images/carrelage-int.webp',
+    maxWidth: 600,
+    quality: 75,
     name: 'Carrelage intérieur'
   },
   {
-    input: 'public/images/carrelage-ext.webp',
-    maxWidth: 1000,
-    quality: 80,
+    input: 'public/images/carrelage.webp',
+    maxWidth: 600,
+    quality: 75,
     name: 'Carrelage extérieur'
   },
   {
-    input: 'public/images/mosaique.jpg',
-    maxWidth: 1200,
-    quality: 80,
+    input: 'public/images/mosaique.webp',
+    maxWidth: 600,
+    quality: 75,
     name: 'Mosaïque'
   },
   {
-    input: 'public/images/surmesure.webp',
-    maxWidth: 1200,
-    quality: 80,
-    name: 'Sur mesure'
+    input: 'public/images/salle-bain-familiale.webp',
+    maxWidth: 600,
+    quality: 75,
+    name: 'Salle de bain familiale'
   }
 ];
 

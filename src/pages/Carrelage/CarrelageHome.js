@@ -31,6 +31,14 @@ function CarrelageHome() {
       <Header />
 
       <section className="carrelage-hero">
+        <img 
+          src="/images/carrelage.webp" 
+          alt="Artisan Carreleur" 
+          className="carrelage-hero__image"
+          fetchPriority="high"
+          decoding="async"
+        />
+        <div className="carrelage-hero__overlay"></div>
         <div className="carrelage-hero__content">
           <h1 className="carrelage-hero__title">Artisan Carreleur</h1>
           <p className="carrelage-hero__subtitle">
