@@ -97,10 +97,3 @@ export const EVENTS = {
   BUTTON_CLICK: 'button_click',
 };
 
-export default {
-  initializeGA,
-  trackEvent,
-  trackPageView,
-  trackConversion,
-  EVENTS,
-};
