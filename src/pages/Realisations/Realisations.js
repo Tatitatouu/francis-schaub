@@ -73,6 +73,14 @@ const Realisations = () => {
         <main className="realisations-main">
           {/* Hero Section */}
           <section className="realisations-hero">
+            <img 
+              src="/images/réalisations.webp" 
+              alt="Nos réalisations" 
+              className="realisations-hero-image"
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="realisations-hero-overlay"></div>
             <div className="realisations-hero-content">
               <h1 className="realisations-hero-title">Nos Réalisations</h1>
               <p className="realisations-hero-subtitle">
