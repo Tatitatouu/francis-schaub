@@ -32,9 +32,6 @@ function CarrelageHome() {
 
       <section className="carrelage-hero">
         <div className="carrelage-hero__content">
-          <div className="carrelage-hero__icon">
-            <Grid3x3 size={80} strokeWidth={1.5} />
-          </div>
           <h1 className="carrelage-hero__title">Artisan Carreleur</h1>
           <p className="carrelage-hero__subtitle">
             Un savoir-faire artisanal au service de vos projets de carrelage, 
@@ -51,18 +48,8 @@ function CarrelageHome() {
         </div>
       </section>
 
-      <section id="services" className="carrelage-section carrelage-intro">
-        <div className="carrelage-section__header">
-          <h2 className="carrelage-section__title">Notre expertise en carrelage</h2>
-          <p className="carrelage-section__description">
-            Fort de nombreuses années d'expérience, nous mettons notre expertise artisanale 
-            à votre service pour tous vos projets de carrelage, qu'ils soient neufs ou en rénovation.
-          </p>
-        </div>
-      </section>
-
       {/* INTÉRIEUR */}
-      <section id="interieur" className="carrelage-section carrelage-detail">
+      <section id="interieur" className="carrelage-detail">
         <div className="carrelage-detail__container">
           <div className="carrelage-detail__content">
             <h3 className="carrelage-detail__title">
@@ -83,7 +70,7 @@ function CarrelageHome() {
           </div>
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/carrelage-int.webp" 
+              src="/images/carrelage-int.jpeg" 
               alt="Carrelage intérieur" 
               className="carrelage-detail__image"
             />
@@ -138,12 +125,11 @@ function CarrelageHome() {
               <li><CheckCircle size={20} /> Mosaïque décorative</li>
               <li><CheckCircle size={20} /> Crédences cuisine</li>
               <li><CheckCircle size={20} /> Motifs et frises personnalisés</li>
-              <li><CheckCircle size={20} /> Pose en opus ou damier</li>
             </ul>
           </div>
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/mosaique.webp" 
+              src="/images/mosaique.jpg" 
               alt="Faïence et mosaïque" 
               className="carrelage-detail__image"
             />
@@ -172,7 +158,6 @@ function CarrelageHome() {
             </p>
             <ul className="carrelage-detail__list">
               <li><CheckCircle size={20} /> Découpes complexes et angles</li>
-              <li><CheckCircle size={20} /> Pose en chevron ou point de Hongrie</li>
               <li><CheckCircle size={20} /> Associations de matériaux</li>
               <li><CheckCircle size={20} /> Restauration de carrelages anciens</li>
               <li><CheckCircle size={20} /> Conseils personnalisés</li>

@@ -194,15 +194,7 @@ const SalleDeBains = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="services-conclusion">
-                <div className="conclusion-highlight">
-                  <h3>Notre promesse</h3>
-                  <p>
-                  Nous créons des salles de bains fonctionnelles, élégantes et pensées pour votre confort au quotidien.
-                  </p>
-                </div>
-              </div>
+
             </div>
           </section>
 
@@ -214,21 +206,6 @@ const SalleDeBains = () => {
                 <p className="salle-bains-section-subtitle">
                   Accessibilité et sécurité pour tous
                 </p>
-              </div>
-              
-              <div className="pmr-intro">
-                <div className="pmr-context">
-                  <p>
-                    Le temps qui passe impacte parfois la mobilité des personnes âgées. De même, les accidents de la vie 
-                    peuvent mettre à mal la capacité d'un individu à se mouvoir. Afin de <strong>permettre aux Personnes à 
-                    Mobilité Réduite de se maintenir à domicile en toute sécurité</strong>, il est primordial d'aménager 
-                    leur lieu de vie en conséquence.
-                  </p>
-                  <p>
-                    Dans ce contexte, la salle d'eau est souvent une des pièces qu'il convient de transformer en priorité.
-                  </p>
-                </div>
-
               </div>
               
               <div className="pmr-services">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
@@ -6,175 +6,53 @@ import BackToTop from '../../components/BackToTop';
 import { SEO_PAGES, getBreadcrumbSchema } from '../../config/seoConfig';
 import './Realisations.css';
 
-const Carousel = ({ realisations, current, setCurrent, theme = '' }) => {
-  const nextSlide = () => setCurrent((current + 1) % realisations.length);
-  const prevSlide = () => setCurrent((current - 1 + realisations.length) % realisations.length);
-  const goToSlide = (index) => setCurrent(index);
-  
-  // Précharger toutes les images du carousel (WebP + fallback)
-  useEffect(() => {
-    realisations.forEach((real) => {
-      // Précharger WebP
-      const webpLink = document.createElement('link');
-      webpLink.rel = 'preload';
-      webpLink.as = 'image';
-      webpLink.href = real.image;
-      webpLink.type = 'image/webp';
-      document.head.appendChild(webpLink);
-      
-      // Précharger fallback si disponible
-      if (real.fallback) {
-        const fallbackLink = document.createElement('link');
-        fallbackLink.rel = 'preload';
-        fallbackLink.as = 'image';
-        fallbackLink.href = real.fallback;
-        document.head.appendChild(fallbackLink);
-      }
-    });
-  }, [realisations]);
-  
-  const currentReal = realisations[current];
-  
-  return (
-    <div className="carousel-container">
-      <button 
-        className="carousel-btn prev" 
-        onClick={prevSlide}
-        aria-label="Projet précédent"
-      >
-        ‹
-      </button>
-      
-      <div className="carousel-content">
-        <div className={`realisation-card-large ${theme}`}>
-          <div className={`realisation-image-container ${theme}`}>
-            <picture>
-              <source srcSet={currentReal.image} type="image/webp" />
-              <img 
-                src={currentReal.fallback || currentReal.image} 
-                alt={currentReal.title}
-                className="realisation-image"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <div className="realisation-content">
-            <h3>{currentReal.title}</h3>
-            <p>{currentReal.description}</p>
-            <div className="realisation-tags">
-              {currentReal.tags.map((tag, index) => (
-                <span key={index} className="tag">{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <button 
-        className="carousel-btn next" 
-        onClick={nextSlide}
-        aria-label="Projet suivant"
-      >
-        ›
-      </button>
-      
-      <div className="carousel-indicators">
-        {realisations.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator ${index === current ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Aller au projet ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const salleDeBainsRealisations = [
-  {
-    image: '/images/contemporaine.webp',
-    fallback: '/images/contemporaine.webp',
-    title: 'Salle de bains contemporaine',
-    description: 'Rénovation complète avec douche italienne, carrelage grand format et vasque design',
-    tags: ['Douche italienne', 'Moderne']
-  },
-  {
-    image: '/images/salle-bains-2.webp',
-    fallback: '/images/salle-bains-2.webp',
-    title: 'Aménagement PMR',
-    description: 'Transformation adaptée avec receveur extra-plat, barres de maintien et siège escamotable',
-    tags: ['PMR', 'Sécurité']
-  },
-  {
-    image: '/images/salle-bain-familiale.webp',
-    fallback: '/images/salle-bain-familiale.webp',
-    title: 'Salle de bains familiale',
-    description: 'Espace optimisé avec baignoire, double vasque et rangements sur mesure',
-    tags: ['Familiale', 'Optimisation']
-  },
-  {
-    image: '/images/salle-bains-4.webp',
-    fallback: '/images/salle-bains-4.webp',
-    title: 'Salle d\'eau zen',
-    description: 'Ambiance spa avec matériaux naturels, éclairage tamisé et finitions raffinées',
-    tags: ['Zen', 'Naturel']
-  }
-];
-
-const chauffageRealisations = [
-  {
-    image: '/images/chauffage-1.webp',
-    fallback: '/images/chauffage-1.webp',
-    title: 'Chaudière à condensation',
-    description: 'Installation complète avec remplacement de l\'ancienne chaudière et optimisation du circuit',
-    tags: ['Condensation', 'Économique']
-  },
-  {
-    image: '/images/chauffage-2.webp',
-    fallback: '/images/chauffage-2.webp',
-    title: 'Pompe à chaleur air/eau',
-    description: 'Système complet avec radiateurs basse température pour un confort optimal',
-    tags: ['PAC', 'Écologique']
-  },
-  {
-    image: '/images/chauffage-3.webp',
-    fallback: '/images/chauffage-3.webp',
-    title: 'Plancher chauffant',
-    description: 'Installation de plancher chauffant hydraulique dans une maison neuve',
-    tags: ['Confort', 'Neuf']
-  }
-];
-
-const sanitaireRealisations = [
-  {
-    image: '/images/sanitaire-1.webp',
-    fallback: '/images/sanitaire-1.webp',
-    title: 'Rénovation complète sanitaire',
-    description: 'Remplacement de toute la plomberie avec mise aux normes et installation de nouveaux équipements',
-    tags: ['Rénovation', 'Normes']
-  },
-  {
-    image: '/images/suspendu.webp',
-    fallback: '/images/suspendu.webp',
-    title: 'Installation de WC suspendus',
-    description: 'Pose de WC suspendus avec bâti-support et optimisation de l\'espace',
-    tags: ['Design', 'Gain de place']
-  },
-  {
-    image: '/images/sanitaire-3.webp',
-    fallback: '/images/sanitaire-3.webp',
-    title: 'Adoucisseur d\'eau',
-    description: 'Installation d\'un système d\'adoucissement pour protéger les équipements et améliorer le confort',
-    tags: ['Confort', 'Protection']
-  }
-];
-
 const Realisations = () => {
-  const [currentSalleDeBains, setCurrentSalleDeBains] = useState(0);
-  const [currentChauffage, setCurrentChauffage] = useState(0);
-  const [currentSanitaire, setCurrentSanitaire] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
+  
+  const realisations = [
+    { id: 1, image: '/images/nosréalisations (1).png', category: 'salle-bains' },
+    { id: 2, image: '/images/nosréalisations (2).png', category: 'chauffage' },
+    { id: 3, image: '/images/nosréalisations (3).png', category: 'sanitaire' },
+    { id: 4, image: '/images/nosréalisations (4).png', category: 'carrelage' },
+    { id: 5, image: '/images/nosréalisations (5).png', category: 'salle-bains' },
+    { id: 6, image: '/images/nosréalisations (6).png', category: 'chauffage' },
+    { id: 7, image: '/images/nosréalisations (7).png', category: 'sanitaire' },
+    { id: 8, image: '/images/nosréalisations (8).png', category: 'carrelage' },
+    { id: 9, image: '/images/nosréalisations (9).png', category: 'salle-bains' },
+    { id: 10, image: '/images/nosréalisations (10).png', category: 'chauffage' },
+    { id: 11, image: '/images/nosréalisations (11).png', category: 'sanitaire' },
+    { id: 12, image: '/images/nosréalisations (12).png', category: 'carrelage' },
+    { id: 13, image: '/images/nosréalisations (13).png', category: 'salle-bains' },
+    { id: 14, image: '/images/nosréalisations (14).png', category: 'chauffage' },
+    { id: 15, image: '/images/nosréalisations (15).png', category: 'sanitaire' },
+    { id: 16, image: '/images/nosréalisations (16).jpeg', category: 'carrelage' },
+    { id: 17, image: '/images/nosréalisations (17).jpeg', category: 'salle-bains' },
+    { id: 18, image: '/images/nosréalisations (18).jpeg', category: 'chauffage' },
+    { id: 19, image: '/images/nosréalisations (19).jpeg', category: 'sanitaire' },
+    { id: 20, image: '/images/nosréalisations (20).jpeg', category: 'carrelage' },
+    { id: 21, image: '/images/nosréalisations (21).jpeg', category: 'salle-bains' },
+    { id: 22, image: '/images/nosréalisations (22).jpeg', category: 'chauffage' },
+    { id: 23, image: '/images/nosréalisations (23).jpeg', category: 'sanitaire' },
+    { id: 24, image: '/images/nosréalisations (24).jpeg', category: 'carrelage' },
+    { id: 25, image: '/images/nosréalisations (25).jpeg', category: 'salle-bains' },
+    { id: 26, image: '/images/nosréalisations (26).jpeg', category: 'chauffage' },
+    { id: 27, image: '/images/nosréalisations2.jpeg', category: 'sanitaire' },
+  ];
+
+  // Lightbox navigation
+  const currentIndex = selectedImage ? realisations.findIndex(r => r.id === selectedImage.id) : -1;
+  
+  const handlePrevImage = () => {
+    if (currentIndex > 0) {
+      setSelectedImage(realisations[currentIndex - 1]);
+    }
+  };
+  
+  const handleNextImage = () => {
+    if (currentIndex < realisations.length - 1) {
+      setSelectedImage(realisations[currentIndex + 1]);
+    }
+  };
 
   return (
     <>
@@ -189,82 +67,94 @@ const Realisations = () => {
           ]))}
         </script>
       </Helmet>
-      <div className="realisations-page page-with-hero">
+      <div className="realisations-page">
         <Header variant="realisations" />
         
-        <main className="realisations-main page-content">
+        <main className="realisations-main">
+          {/* Hero Section */}
           <section className="realisations-hero">
-            <div className="realisations-container">
-              <div className="realisations-hero-content">
-                <h1 className="realisations-hero-title">
-                  Nos Réalisations
-                </h1>
-                <p className="realisations-hero-subtitle">
-                  Découvrez nos projets de chauffage, sanitaire et salles de bains clé en main
-                </p>
-              </div>
+            <div className="realisations-hero-content">
+              <h1 className="realisations-hero-title">Nos Réalisations</h1>
+              <p className="realisations-hero-subtitle">
+                Découvrez nos projets de chauffage, sanitaire, carrelage et salles de bains
+              </p>
             </div>
           </section>
 
-          <div className="realisations-sections-wrapper">
-            {/* Section Salles de Bains */}
-            <section className="realisations-section salle-bains">
-              <div className="realisations-container">
-                <div className="section-header">
-                  <h2 className="section-title">🛁 Salles de Bains</h2>
-                  <p className="section-subtitle">
-                    Des espaces transformés avec soin et expertise
-                  </p>
-                </div>
-                
-                <Carousel 
-                  realisations={salleDeBainsRealisations}
-                  current={currentSalleDeBains}
-                  setCurrent={setCurrentSalleDeBains}
-                  theme="sdb-bg"
-                />
+          {/* Gallery Section */}
+          <section className="realisations-gallery-section">
+            <div className="realisations-container">
+              <div className="gallery-grid">
+                {realisations.map((real) => (
+                  <div 
+                    key={real.id} 
+                    className="gallery-item"
+                    onClick={() => setSelectedImage(real)}
+                  >
+                    <img 
+                      src={real.image} 
+                      alt={`Réalisation ${real.id}`}
+                      className="gallery-image"
+                      loading="lazy"
+                    />
+                    <div className="gallery-overlay">
+                      <button className="view-btn">Voir en détail</button>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </section>
-
-            {/* Section Chauffage */}
-            <section className="realisations-section chauffage">
-              <div className="realisations-container">
-                <div className="section-header">
-                  <h2 className="section-title">🔥 Chauffage</h2>
-                  <p className="section-subtitle">
-                    Des installations performantes et économiques
-                  </p>
-                </div>
-                
-                <Carousel 
-                  realisations={chauffageRealisations}
-                  current={currentChauffage}
-                  setCurrent={setCurrentChauffage}
-                  theme="chauffage-bg"
-                />
-              </div>
-            </section>
-
-            {/* Section Sanitaire */}
-            <section className="realisations-section sanitaire">
-              <div className="realisations-container">
-                <div className="section-header">
-                  <h2 className="section-title">🔧 Sanitaire</h2>
-                  <p className="section-subtitle">
-                    Installations et rénovations de qualité
-                  </p>
-                </div>
-                
-                <Carousel 
-                  realisations={sanitaireRealisations}
-                  current={currentSanitaire}
-                  setCurrent={setCurrentSanitaire}
-                  theme="sanitaire-bg"
-                />
-              </div>
-            </section>
-          </div>
+            </div>
+          </section>
         </main>
+
+        {/* Lightbox Modal */}
+        {selectedImage && (
+          <div className="lightbox" onClick={() => setSelectedImage(null)}>
+            <button 
+              className="lightbox-close"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Fermer"
+            >
+              ✕
+            </button>
+            
+            <button 
+              className="lightbox-prev"
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrevImage();
+              }}
+              disabled={currentIndex === 0}
+              aria-label="Image précédente"
+            >
+              ‹
+            </button>
+
+            <div className="lightbox-content">
+              <img 
+                src={selectedImage.image} 
+                alt={`Réalisation ${selectedImage.id}`}
+                className="lightbox-image"
+              />
+            </div>
+
+            <button 
+              className="lightbox-next"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNextImage();
+              }}
+              disabled={currentIndex === realisations.length - 1}
+              aria-label="Image suivante"
+            >
+              ›
+            </button>
+
+            <div className="lightbox-counter">
+              {currentIndex + 1} / {realisations.length}
+            </div>
+          </div>
+        )}
         <Footer />
         <BackToTop />
       </div>

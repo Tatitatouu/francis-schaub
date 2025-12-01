@@ -188,16 +188,6 @@
 .energies-section.pac .energies-section-title::after {
   background: linear-gradient(90deg, #334155, #475569);
 }
-
-.energies-pac-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: #2d2d2d;
-  line-height: 1.6;
-}
-
 .energies-pac-intro strong {
   color: #334155;
 }
@@ -287,15 +277,6 @@
   background: linear-gradient(90deg, #475569, #64748b);
 }
 
-.energies-solaire-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: #2d2d2d;
-  line-height: 1.6;
-}
-
 .energies-solaire-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -357,31 +338,6 @@
   line-height: 1.4;
 }
 
-.energies-solaire-specs {
-  background: #f1f5f9;
-  padding: 0 1.5rem;
-  border-radius: 12px;
-  border-left: 3px solid #475569;
-}
-
-.energies-spec-item {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5rem 0;
-  font-size: 0.95rem;
-  color: #374151;
-}
-
-.energies-spec-item:not(:last-child) {
-  border-bottom: 1px solid #eee;
-}
-
-.energies-price {
-  color: #475569;
-  font-weight: 700;
-}
-
 .energies-section.aides {
   background: #e2e8f0;
 }
@@ -392,15 +348,6 @@
 
 .energies-section.aides .energies-section-title::after {
   background: linear-gradient(90deg, #334155, #475569);
-}
-
-.energies-aides-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: #2d2d2d;
-  line-height: 1.6;
 }
 
 .energies-aides-intro strong {
@@ -474,10 +421,6 @@
   .energies-hero-content {
     padding: 1em;
   }
-  .energies-solaire-specs {
-    min-height: 100px;
-    padding: 1rem 1.5rem;
-  }
   
   .energies-spec-item {
     padding: 0.8rem 0;
@@ -493,11 +436,6 @@
     padding: 1em;
   }
 
-  .energies-solaire-specs {
-    min-height: 100px;
-    padding: 1.25rem 1.5rem;
-  }
-  
   .energies-spec-item {
     padding: 1rem 0;
     min-height: 50px;
@@ -506,41 +444,6 @@
   }
   .energies-spec-item:not(:last-child) {
     font-size: 0.60em;
-  }
-  .systeme-label {
-    font-size: 0.7em;
-  }
-
-  .systeme-valeur {
-    font-size: 0.7em;
-  }
-  .systeme-prix-badge {
-    font-size: 0.6rem !important;
-  }
-}
-
-@media (max-width: 360px) {
-  .energies-solaire-specs {
-    min-height: 100px;
-    padding: 1.5rem;
-  }
-  
-  .energies-spec-item {
-    padding: 1.2rem 0;
-    min-height: 55px;
-    font-size: 0.60em;
-  }
-
-  .energies-spec-item:not(:last-child) {
-    font-size: 0.60em;
-  }
-
-  .systeme-label {
-    font-size: 0.7em;
-  }
-
-  .systeme-valeur {
-    font-size: 0.7em;
   }
 }
 
@@ -603,14 +506,6 @@
   }
 }
 
-
-.systeme-combine-ameliore {
-  padding: 0.5rem 1.5rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1);
-}
-
 .systeme-entete h5 {
   color: #334155;
   font-size: 1.1rem;
@@ -625,51 +520,4 @@
   font-size: 0.9rem;
   line-height: 1.4;
   font-weight: 500;
-}
-.systeme-detail-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 0;
-  font-size: 0.95rem;
-}
-
-.systeme-detail-item:not(:last-child) {
-  border-bottom: 1px solid #e2e8f0;
-  align-items: baseline;
-}
-
-.systeme-label {
-  color: #64748b;
-  font-weight: 600;
-  font-size: 0.9em;
-}
-
-.systeme-valeur {
-  color: #334155;
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-.systeme-prix-badge {
-  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  box-shadow: 0 2px 4px rgba(71, 85, 105, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 480px) {
-  .systeme-valeur {
-    font-size: 0.7rem !important;
-  }
-}
-
-@media (max-width: 360px) {
-  .systeme-valeur {
-    font-size: 0.65rem !important;
-  }
 }

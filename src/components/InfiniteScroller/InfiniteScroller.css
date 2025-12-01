@@ -1,0 +1,74 @@
+.scroller-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    background: white;
+}
+
+.scroller-inner {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: infiniteScroll 40s linear infinite;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-25% - 0.75rem));
+    }
+}
+
+.scroller-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Logo des marques - Avec couleurs naturelles */
+.brand-logo {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .scroller-container {
+        padding: 1.5rem 0;
+    }
+    
+    .scroller-inner {
+        gap: 2rem;
+    }
+    
+    .brand-logo {
+        height: 50px;
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroller-container {
+        padding: 1rem 0;
+    }
+    
+    .scroller-inner {
+        gap: 1.5rem;
+    }
+    
+    .brand-logo {
+        height: 40px;
+        max-width: 100px;
+    }
+}

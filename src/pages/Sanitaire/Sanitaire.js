@@ -50,26 +50,12 @@ const Sanitaire = () => {
                 <p className="sanitaire-section-subtitle">
                   Solutions complètes pour moderniser vos équipements sanitaires
                 </p>
-              </div>
-              
-              <div className="sanitaire-intro">
-                <p>
-                  Le <strong>réseau d'eau</strong> de la maison que vous rénovez n'est plus adapté à vos besoins ? 
-                  Les <strong>vieilles évacuations en fonte</strong> de votre bâtiment doivent être remplacées ? 
-                  Vous recherchez un professionnel expérimenté pour <strong>moderniser vos vieux équipements sanitaires</strong> ?
-                </p>
-                <p>
-                  SCHAUB Francis ETS emploie une équipe de <strong>plombiers - installateurs sanitaires aguerris</strong> capables de 
-                  <strong> prendre en charge vos projets dans le Haut-Rhin</strong> :
-                </p>
-              </div>
-              
+              </div>              
               <div className="sanitaire-services">
                 <div className="sanitaire-service-item">
                   <div className="sanitaire-service-icon">🔧</div>
                   <div className="sanitaire-service-content">
                     <h4>Rénovation de réseau d'eau</h4>
-                    <p>Réhabilitation de la tuyauterie, remplacement / déplacement des arrivées d'eau, remplacement / déplacement des évacuations d'eau</p>
                   </div>
                 </div>
                 
@@ -77,7 +63,6 @@ const Sanitaire = () => {
                   <div className="sanitaire-service-icon">🗑️</div>
                   <div className="sanitaire-service-content">
                     <h4>Dépose des anciens équipements sanitaires</h4>
-                    <p>Retrait professionnel de vos anciens équipements</p>
                   </div>
                 </div>
                 
@@ -85,7 +70,6 @@ const Sanitaire = () => {
                   <div className="sanitaire-service-icon">🚿</div>
                   <div className="sanitaire-service-content">
                     <h4>Pose des nouveaux équipements sanitaires</h4>
-                    <p>Lavabo (simple vasque / double vasque), douche, baignoire, robinetterie, etc.</p>
                   </div>
                 </div>
                 
@@ -93,7 +77,6 @@ const Sanitaire = () => {
                   <div className="sanitaire-service-icon">♨️</div>
                   <div className="sanitaire-service-content">
                     <h4>Remplacement / pose de chauffe-eau</h4>
-                    <p>Installation d'équipements modernes et efficaces</p>
                   </div>
                 </div>
                 
@@ -101,15 +84,13 @@ const Sanitaire = () => {
                   <div className="sanitaire-service-icon">🛁</div>
                   <div className="sanitaire-service-content">
                     <h4>Création complète de salle de bains</h4>
-                    <p>Conception et réalisation de votre nouvelle salle de bains</p>
                   </div>
                 </div>
                 
                 <div className="sanitaire-service-item">
                   <div className="sanitaire-service-icon">⚙️</div>
                   <div className="sanitaire-service-content">
-                    <h4>Etc.</h4>
-                    <p>Et bien d'autres services sanitaires sur mesure</p>
+                    <h4>Et bien d'autres services </h4>
                   </div>
                 </div>
               </div>
@@ -135,10 +116,6 @@ const Sanitaire = () => {
               </div>
               
               <div className="sanitaire-urgence-intro">
-                <p>
-                  Vous êtes rentré chez vous et découvrez une <strong>flaque d'eau sous votre ballon d'eau chaude</strong> ? 
-                  Le <strong>mitigeur capricieux</strong> ou une <strong>chasse d'eau rebelle</strong> ? Pas de panique.
-                </p>
                 <p>
                   Chez <strong>SCHAUB Francis ETS</strong>, nos <strong>plombiers dépanneurs</strong> ont le coup d'oeil et le bon réflexe pour identifier rapidement l'origine de votre problème.
                 </p>

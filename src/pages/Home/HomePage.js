@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../../components/Hero';
 import ProjectCard from '../../components/ProjectCard';
+import InfiniteScroller, { brandsData } from '../../components/InfiniteScroller';
 import Services from '../../components/Services';
 import About from '../../components/About';
 import Footer from '../../components/Footer/Footer';
@@ -25,6 +26,7 @@ function HomePage() {
         </main>
         <About />
         <ProjectCard />
+        <InfiniteScroller brands={brandsData} />
         <Services />
         <Footer />
         <BackToTop />

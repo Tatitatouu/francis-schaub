@@ -532,59 +532,6 @@
   }
 }
 
-.services-conclusion {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.conclusion-highlight {
-  background: linear-gradient(135deg, var(--sdb-primary-dark) 0%, var(--sdb-primary) 100%);
-  color: white;
-  padding: 3rem;
-  border-radius: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 15px 35px rgba(95, 158, 160, 0.4);
-}
-
-.conclusion-highlight h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--sdb-neutral);
-}
-
-.conclusion-highlight p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* ===========================================
-   SECTION PMR
-   =========================================== */
-
-.pmr-intro {
-  margin-bottom: 4rem;
-}
-
-.pmr-context {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 0 1rem;
-}
-
-.pmr-context p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1.5rem;
-}
-
-.pmr-context strong {
-  color: var(--sdb-neutral);
-  font-weight: 700;
-}
-
 /* ===========================================
    PMR SERVICES CARDS
    =========================================== */

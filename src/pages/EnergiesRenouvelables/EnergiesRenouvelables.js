@@ -90,15 +90,7 @@ const EnergiesRenouvelables = () => {
                   Solutions écologiques et économiques pour chauffer votre logement
                 </p>
               </div>
-              
-              <div className="energies-pac-intro">
-                <p>
-                  Les <strong>pompes à chaleur</strong> figurent parmi les solutions de chauffage les plus performantes du marché. 
-                  Avec un <strong>COP (coefficient de performance)</strong> pouvant atteindre 4 à 5, 
-                  elles restaurent jusqu’à cinq fois plus d’énergie qu’elles n’en consomment.
-                </p>
-              </div>
-              
+
               <div className="energies-pac-grid">
                 <div className="energies-pac-card">
                   <div className="energies-pac-icon">🌬️</div>
@@ -149,13 +141,6 @@ const EnergiesRenouvelables = () => {
                 </p>
               </div>
               
-              <div className="energies-solaire-intro">
-                <p>
-                  Le soleil alsacien n’est peut-être pas tropical, 
-                  mais il suffit largement pour rentabiliser une installation solaire.
-                </p>
-              </div>
-              
               <div className="energies-solaire-grid">
                 <div className="energies-solaire-card">
                   <div className="energies-solaire-header">
@@ -168,17 +153,6 @@ const EnergiesRenouvelables = () => {
                       <span>✓ Réduction de la facture électrique</span>
                       <span>✓ Revente du surplus possible</span>
                       <span>✓ Entretien minimal</span>
-                    </div>
-                    <div className="energies-solaire-specs">
-                      <div className="energies-spec-item">
-                        <strong>3 kWc</strong> : ~ 2 700 kWh/an <span className="energies-price"> ~ 10 000€</span>
-                      </div>
-                      <div className="energies-spec-item">
-                        <strong>6 kWc</strong> : ~ 5 200 kWh/an <span className="energies-price"> ~ 13 500 €</span>
-                      </div>
-                      <div className="energies-spec-item">
-                        <strong>9 kWc</strong> : ~ 8 500 kWh/an <span className="energies-price"> ~ 17 500 €</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -195,17 +169,7 @@ const EnergiesRenouvelables = () => {
                       <span>✓ Complément idéal à votre chauffage</span>
                       <span>✓ Aides financières importantes</span>
                     </div>
-                    <div className="energies-solaire-specs">
-                      <div className="energies-spec-item">
-                        <strong>200L</strong> : 3-4 personnes ~<span className="energies-price">5 500 €</span>
-                      </div>
-                      <div className="energies-spec-item">
-                        <strong>300L</strong> : 5-6 personnes ~<span className="energies-price">7 000 €</span>
-                      </div>
-                      <div className="energies-spec-item">
-                        <strong>500L</strong> : 7+ personnes ~<span className="energies-price">9 000 €</span>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
                 
@@ -220,18 +184,6 @@ const EnergiesRenouvelables = () => {
                       <span>✓ Solution complète</span>
                       <span>✓ Optimisation de l'installation</span>
                       <span>✓ Rentabilité maximisée</span>
-                    </div>
-                    <div className="energies-solaire-specs systeme-combine-ameliore">
-                      <div className="systeme-details">
-                        <div className="systeme-detail-item">
-                          <span className="systeme-label">Amortissement</span>
-                          <span className="systeme-valeur">7-10 ans</span>
-                        </div>
-                        <div className="systeme-detail-item">
-                          <span className="systeme-label">Prix</span>
-                          <span className="systeme-prix-badge">Sur devis</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -248,18 +200,7 @@ const EnergiesRenouvelables = () => {
                   Profitez des nombreuses aides disponibles pour vos projets
                 </p>
               </div>
-              
-              <div className="energies-aides-intro">
-                <p>
-                  <strong>Entreprise certifiée RGE (Reconnu Garant de l'Environnement), SCHAUB Francis ETS</strong>,  
-                  vous permet de profiter de <strong>toutes les aides disponibles</strong>. 
-                </p>
-                <p>Pour les démarches administratives :
-                  <strong> pas de stress : on s'en occupe entièrement, vous n'avez rien à faire.</strong>.
 
-                </p>
-              </div>
-              
               <div className="energies-aides-grid">
                 <div className="energies-aide-card">
                   <div className="energies-aide-icon">🏠</div>

@@ -93,9 +93,6 @@ const Chauffage = () => {
           <section className="chauffage-section gaz-fioul">
             <div className="chauffage-section-header">
               <h2 className="chauffage-section-title">Installation de Chaudières Gaz et Chaudières Fioul</h2>
-              <p className="chauffage-section-subtitle">
-                Le gaz et le fioul ont encore de beaux jours devant eux grâce aux technologies modernes
-              </p>
             </div>
             
             <div className="chauffage-content-grid">
@@ -132,9 +129,6 @@ const Chauffage = () => {
           <section className="chauffage-section pac">
             <div className="chauffage-section-header">
               <h2 className="chauffage-section-title">Pompes à Chaleur</h2>
-              <p className="chauffage-section-subtitle">
-                Solutions écologiques pour un chauffage performant et économique
-              </p>
             </div>
             
             <div className="chauffage-pac-grid">
@@ -166,11 +160,6 @@ const Chauffage = () => {
           <section className="chauffage-section depannage">
             <div className="chauffage-section-header">
               <h2 className="chauffage-section-title">Dépannage et Entretien</h2>
-                <div className='chauffage-section-subtitle'>
-                    <p>
-                        Dépannage et entretien régulier pour prolonger la durée de vie de vos équipements.
-                    </p>
-                </div>
             </div>
             
             <div className="chauffage-depannage-content">
