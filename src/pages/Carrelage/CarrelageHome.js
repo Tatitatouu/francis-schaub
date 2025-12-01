@@ -67,9 +67,11 @@ function CarrelageHome() {
           </div>
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/carrelage-int.jpeg" 
+              src="/images/carrelage-int.webp" 
               alt="Carrelage intérieur" 
               className="carrelage-detail__image"
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -80,9 +82,10 @@ function CarrelageHome() {
         <div className="carrelage-detail__container">
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/carrelage-ext.webp" 
+              src="/images/carrelage.webp" 
               alt="Carrelage extérieur" 
               className="carrelage-detail__image"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div className="carrelage-detail__content">
@@ -126,9 +129,10 @@ function CarrelageHome() {
           </div>
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/mosaique.jpg" 
+              src="/images/mosaique.webp" 
               alt="Faïence et mosaïque" 
               className="carrelage-detail__image"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -139,9 +143,10 @@ function CarrelageHome() {
         <div className="carrelage-detail__container">
           <div className="carrelage-detail__visual">
             <img 
-              src="/images/surmesure.webp" 
+              src="/images/salle-bain-familiale.webp" 
               alt="Travaux sur mesure" 
               className="carrelage-detail__image"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div className="carrelage-detail__content">
