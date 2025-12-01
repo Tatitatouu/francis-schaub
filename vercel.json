@@ -44,7 +44,7 @@
       ]
     },
     {
-      "source": "/static/(.*\\.(css|js))",
+      "source": "/static/:path*",
       "headers": [
         {
           "key": "Cache-Control",
