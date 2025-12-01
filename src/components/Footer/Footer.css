@@ -101,6 +101,10 @@
   position: relative;
 }
 
+.footer-title  {
+  text-align: left !important;
+}
+
 .footer-title::after {
   content: '';
   position: absolute;

@@ -101,6 +101,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2em;
 }
 
 .contact-card::before {
@@ -185,6 +186,7 @@
   font-weight: 600;
   color: #1e293b;
   margin: 0 0 6px 0;
+  text-align: left !important;
 }
 
 .contact-text p {
@@ -590,7 +592,6 @@
     width: 100%;
   }
   
-  .contact-text h4,
   .contact-text p,
   .contact-note {
     text-align: center;
