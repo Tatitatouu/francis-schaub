@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Analytics } from '@vercel/analytics/react';
 import useGoogleTagManager from './hooks/useGoogleTagManager';
 
 import ActivitySelection from './pages/ActivitySelection';
@@ -28,7 +27,6 @@ function App() {
         <Router>
           <ScrollToTop />
           <CookieBanner />
-          <Analytics />
           <Routes>
           {/* Page de sélection d'activité */}
           <Route path="/" element={<ActivitySelection />} />
