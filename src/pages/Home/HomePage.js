@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import Hero from '../../components/Hero';
 import ProjectCard from '../../components/ProjectCard';
 import InfiniteScroller, { brandsData } from '../../components/InfiniteScroller';
-import Services from '../../components/Services';
 import About from '../../components/About';
 import Footer from '../../components/Footer/Footer';
 import BackToTop from '../../components/BackToTop';
@@ -24,10 +23,9 @@ function HomePage() {
         <main>
           <Hero />
         </main>
+        <InfiniteScroller brands={brandsData} />
         <About />
         <ProjectCard />
-        <InfiniteScroller brands={brandsData} />
-        <Services />
         <Footer />
         <BackToTop />
       </div>

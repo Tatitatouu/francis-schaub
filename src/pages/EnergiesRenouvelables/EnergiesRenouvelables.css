@@ -33,7 +33,7 @@
 
 .energies-container {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 2em;
   position: relative;
   z-index: 1;
 }
@@ -451,11 +451,6 @@
   .energies-main {
     padding-top: 60px;
   }
-  
-  .energies-container {
-    padding: 0 1.5rem;
-  }
-  
   .energies-hero {
     padding: 4rem 0;
   }
@@ -482,10 +477,7 @@
 }
 
 @media (max-width: 480px) {
-  .energies-container {
-    padding: 0 1rem;
-  }
-  
+ 
   .energies-section {
     padding: 2rem 0;
   }
@@ -493,7 +485,7 @@
   .energies-pac-card,
   .energies-solaire-card,
   .energies-aide-card {
-    padding: 2rem 1.5rem;
+    padding: 0.5rem 0.5rem;  
   }
   
   .energies-solaire-content,

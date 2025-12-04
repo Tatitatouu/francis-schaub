@@ -25,6 +25,11 @@ export const brandsData = [
     id: 5, 
     name: "Atlantic", 
     logo: "/images/atlantic_logo.webp" 
+  },
+  { 
+    id: 6, 
+    name: "Windhauser", 
+    logo: "/images/windhager_logo.jpg" 
   }
 ];
 
